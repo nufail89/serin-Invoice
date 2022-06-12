@@ -1453,3 +1453,10 @@ C:/Users/ASSALAM/KelIII/Indotalent.Web/obj/Debug/net5.0/Indotalent.Web.genruntim
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Sales/InvoiceDetail/InvoiceDetailIndex.cshtml.g.cs
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Sales/InvoicePayment/InvoicePaymentIndex.cshtml.g.cs
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Administration/Tenant/TenantIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Brand/BrandIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Category/CategoryIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Colour/ColourIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Flavour/FlavourIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Product/ProductIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Size/SizeIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Uom/UomIndex.cshtml.g.cs

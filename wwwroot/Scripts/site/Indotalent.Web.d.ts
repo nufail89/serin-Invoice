@@ -670,6 +670,528 @@ declare namespace Indotalent.Membership {
         Password?: string;
     }
 }
+declare namespace Indotalent.Merchandise {
+    class BrandColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface BrandForm {
+        Name: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        InsertDate: Serenity.DateEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        TenantId: Serenity.IntegerEditor;
+    }
+    class BrandForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface BrandRow {
+        Id?: number;
+        Name?: string;
+        Description?: string;
+        InsertDate?: string;
+        InsertUserId?: number;
+        UpdateDate?: string;
+        UpdateUserId?: number;
+        TenantId?: number;
+    }
+    namespace BrandRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Merchandise.Brand";
+        const deletePermission = "Merchandise:Brand";
+        const insertPermission = "Merchandise:Brand";
+        const readPermission = "Merchandise:Brand";
+        const updatePermission = "Merchandise:Brand";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Description = "Description",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    namespace BrandService {
+        const baseUrl = "Merchandise/Brand";
+        function Create(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BrandRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BrandRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Merchandise/Brand/Create",
+            Update = "Merchandise/Brand/Update",
+            Delete = "Merchandise/Brand/Delete",
+            Retrieve = "Merchandise/Brand/Retrieve",
+            List = "Merchandise/Brand/List"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class CategoryColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface CategoryForm {
+        Name: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        InsertDate: Serenity.DateEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        TenantId: Serenity.IntegerEditor;
+    }
+    class CategoryForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface CategoryRow {
+        Id?: number;
+        Name?: string;
+        Description?: string;
+        InsertDate?: string;
+        InsertUserId?: number;
+        UpdateDate?: string;
+        UpdateUserId?: number;
+        TenantId?: number;
+    }
+    namespace CategoryRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Merchandise.Category";
+        const deletePermission = "Merchandise:Category";
+        const insertPermission = "Merchandise:Category";
+        const readPermission = "Merchandise:Category";
+        const updatePermission = "Merchandise:Category";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Description = "Description",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    namespace CategoryService {
+        const baseUrl = "Merchandise/Category";
+        function Create(request: Serenity.SaveRequest<CategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Merchandise/Category/Create",
+            Update = "Merchandise/Category/Update",
+            Delete = "Merchandise/Category/Delete",
+            Retrieve = "Merchandise/Category/Retrieve",
+            List = "Merchandise/Category/List"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class ColourColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface ColourForm {
+        Name: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        InsertDate: Serenity.DateEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        TenantId: Serenity.IntegerEditor;
+    }
+    class ColourForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface ColourRow {
+        Id?: number;
+        Name?: string;
+        Description?: string;
+        InsertDate?: string;
+        InsertUserId?: number;
+        UpdateDate?: string;
+        UpdateUserId?: number;
+        TenantId?: number;
+    }
+    namespace ColourRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Merchandise.Colour";
+        const deletePermission = "Merchandise:Colour";
+        const insertPermission = "Merchandise:Colour";
+        const readPermission = "Merchandise:Colour";
+        const updatePermission = "Merchandise:Colour";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Description = "Description",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    namespace ColourService {
+        const baseUrl = "Merchandise/Colour";
+        function Create(request: Serenity.SaveRequest<ColourRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ColourRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ColourRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ColourRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Merchandise/Colour/Create",
+            Update = "Merchandise/Colour/Update",
+            Delete = "Merchandise/Colour/Delete",
+            Retrieve = "Merchandise/Colour/Retrieve",
+            List = "Merchandise/Colour/List"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class FlavourColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface FlavourForm {
+        Name: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        InsertDate: Serenity.DateEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        TenantId: Serenity.IntegerEditor;
+    }
+    class FlavourForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface FlavourRow {
+        Id?: number;
+        Name?: string;
+        Description?: string;
+        InsertDate?: string;
+        InsertUserId?: number;
+        UpdateDate?: string;
+        UpdateUserId?: number;
+        TenantId?: number;
+    }
+    namespace FlavourRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Merchandise.Flavour";
+        const deletePermission = "Merchandise:Flavour";
+        const insertPermission = "Merchandise:Flavour";
+        const readPermission = "Merchandise:Flavour";
+        const updatePermission = "Merchandise:Flavour";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Description = "Description",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    namespace FlavourService {
+        const baseUrl = "Merchandise/Flavour";
+        function Create(request: Serenity.SaveRequest<FlavourRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<FlavourRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<FlavourRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<FlavourRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Merchandise/Flavour/Create",
+            Update = "Merchandise/Flavour/Update",
+            Delete = "Merchandise/Flavour/Delete",
+            Retrieve = "Merchandise/Flavour/Retrieve",
+            List = "Merchandise/Flavour/List"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class ProductColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface ProductForm {
+        Name: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        Picture: Serenity.StringEditor;
+        InternalCode: Serenity.StringEditor;
+        Barcode: Serenity.StringEditor;
+        UomId: Serenity.IntegerEditor;
+        BrandId: Serenity.IntegerEditor;
+        CategoryId: Serenity.IntegerEditor;
+        SizeId: Serenity.IntegerEditor;
+        ColourId: Serenity.IntegerEditor;
+        FlavourId: Serenity.IntegerEditor;
+        PurchasePrice: Serenity.DecimalEditor;
+        SalesPrice: Serenity.DecimalEditor;
+        PurchaseTaxId: Serenity.IntegerEditor;
+        SalesTaxId: Serenity.IntegerEditor;
+        InsertDate: Serenity.DateEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        TenantId: Serenity.IntegerEditor;
+    }
+    class ProductForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface ProductRow {
+        Id?: number;
+        Name?: string;
+        Description?: string;
+        Picture?: string;
+        InternalCode?: string;
+        Barcode?: string;
+        UomId?: number;
+        BrandId?: number;
+        CategoryId?: number;
+        SizeId?: number;
+        ColourId?: number;
+        FlavourId?: number;
+        PurchasePrice?: number;
+        SalesPrice?: number;
+        PurchaseTaxId?: number;
+        SalesTaxId?: number;
+        InsertDate?: string;
+        InsertUserId?: number;
+        UpdateDate?: string;
+        UpdateUserId?: number;
+        TenantId?: number;
+    }
+    namespace ProductRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Merchandise.Product";
+        const deletePermission = "Merchandise:Product";
+        const insertPermission = "Merchandise:Product";
+        const readPermission = "Merchandise:Product";
+        const updatePermission = "Merchandise:Product";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Description = "Description",
+            Picture = "Picture",
+            InternalCode = "InternalCode",
+            Barcode = "Barcode",
+            UomId = "UomId",
+            BrandId = "BrandId",
+            CategoryId = "CategoryId",
+            SizeId = "SizeId",
+            ColourId = "ColourId",
+            FlavourId = "FlavourId",
+            PurchasePrice = "PurchasePrice",
+            SalesPrice = "SalesPrice",
+            PurchaseTaxId = "PurchaseTaxId",
+            SalesTaxId = "SalesTaxId",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    namespace ProductService {
+        const baseUrl = "Merchandise/Product";
+        function Create(request: Serenity.SaveRequest<ProductRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProductRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Merchandise/Product/Create",
+            Update = "Merchandise/Product/Update",
+            Delete = "Merchandise/Product/Delete",
+            Retrieve = "Merchandise/Product/Retrieve",
+            List = "Merchandise/Product/List"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class SizeColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface SizeForm {
+        Name: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        InsertDate: Serenity.DateEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        TenantId: Serenity.IntegerEditor;
+    }
+    class SizeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface SizeRow {
+        Id?: number;
+        Name?: string;
+        Description?: string;
+        InsertDate?: string;
+        InsertUserId?: number;
+        UpdateDate?: string;
+        UpdateUserId?: number;
+        TenantId?: number;
+    }
+    namespace SizeRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Merchandise.Size";
+        const deletePermission = "Merchandise:Size";
+        const insertPermission = "Merchandise:Size";
+        const readPermission = "Merchandise:Size";
+        const updatePermission = "Merchandise:Size";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Description = "Description",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    namespace SizeService {
+        const baseUrl = "Merchandise/Size";
+        function Create(request: Serenity.SaveRequest<SizeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SizeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SizeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SizeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Merchandise/Size/Create",
+            Update = "Merchandise/Size/Update",
+            Delete = "Merchandise/Size/Delete",
+            Retrieve = "Merchandise/Size/Retrieve",
+            List = "Merchandise/Size/List"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class UomColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface UomForm {
+        Name: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        InsertDate: Serenity.DateEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        TenantId: Serenity.IntegerEditor;
+    }
+    class UomForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    interface UomRow {
+        Id?: number;
+        Name?: string;
+        Description?: string;
+        InsertDate?: string;
+        InsertUserId?: number;
+        UpdateDate?: string;
+        UpdateUserId?: number;
+        TenantId?: number;
+    }
+    namespace UomRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Merchandise.Uom";
+        const deletePermission = "Merchandise:Uom";
+        const insertPermission = "Merchandise:Uom";
+        const readPermission = "Merchandise:Uom";
+        const updatePermission = "Merchandise:Uom";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Description = "Description",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
+        }
+    }
+}
+declare namespace Indotalent.Merchandise {
+    namespace UomService {
+        const baseUrl = "Merchandise/Uom";
+        function Create(request: Serenity.SaveRequest<UomRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<UomRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UomRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UomRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Merchandise/Uom/Create",
+            Update = "Merchandise/Uom/Update",
+            Delete = "Merchandise/Uom/Delete",
+            Retrieve = "Merchandise/Uom/Retrieve",
+            List = "Merchandise/Uom/List"
+        }
+    }
+}
 declare namespace Indotalent.Sales {
     class CustomerColumns {
         static columnsKey: string;
@@ -1642,6 +2164,174 @@ declare namespace Indotalent.Membership {
     class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
         protected getFormKey(): string;
         private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class BrandDialog extends Serenity.EntityDialog<BrandRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: BrandForm;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class BrandGrid extends Serenity.EntityGrid<BrandRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BrandDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class CategoryDialog extends Serenity.EntityDialog<CategoryRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: CategoryForm;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class CategoryGrid extends Serenity.EntityGrid<CategoryRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CategoryDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class ColourDialog extends Serenity.EntityDialog<ColourRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ColourForm;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class ColourGrid extends Serenity.EntityGrid<ColourRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ColourDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class FlavourDialog extends Serenity.EntityDialog<FlavourRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: FlavourForm;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class FlavourGrid extends Serenity.EntityGrid<FlavourRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof FlavourDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class ProductDialog extends Serenity.EntityDialog<ProductRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProductForm;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class ProductGrid extends Serenity.EntityGrid<ProductRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProductDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class SizeDialog extends Serenity.EntityDialog<SizeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: SizeForm;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class SizeGrid extends Serenity.EntityGrid<SizeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SizeDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class UomDialog extends Serenity.EntityDialog<UomRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: UomForm;
+    }
+}
+declare namespace Indotalent.Merchandise {
+    class UomGrid extends Serenity.EntityGrid<UomRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof UomDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
         constructor(container: JQuery);
     }
 }

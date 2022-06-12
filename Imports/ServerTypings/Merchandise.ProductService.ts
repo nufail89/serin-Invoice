@@ -1,5 +1,4 @@
-﻿
-namespace Indotalent.Merchandise {
+﻿namespace Indotalent.Merchandise {
     export namespace ProductService {
         export const baseUrl = 'Merchandise/Product';
 
@@ -9,12 +8,12 @@ namespace Indotalent.Merchandise {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "Merchandise/Product/Create",
+            Update = "Merchandise/Product/Update",
+            Delete = "Merchandise/Product/Delete",
+            Retrieve = "Merchandise/Product/Retrieve",
+            List = "Merchandise/Product/List"
         }
 
         [
@@ -24,10 +23,9 @@ namespace Indotalent.Merchandise {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>ProductService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>ProductService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }

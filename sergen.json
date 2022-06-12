@@ -13,6 +13,24 @@
       "Key": "Default",
       "Tables": [
         {
+          "Tablename": "Bill",
+          "Identifier": "Bill",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "BillDetail",
+          "Identifier": "BillDetail",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "BillPayment",
+          "Identifier": "BillPayment",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "Brand",
           "Identifier": "Brand",
           "Module": "Merchandise",
@@ -73,6 +91,18 @@
           "PermissionKey": "Merchandise:Product"
         },
         {
+          "Tablename": "PurchaseOrder",
+          "Identifier": "PurchaseOrder",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "PurchaseOrderDetail",
+          "Identifier": "PurchaseOrderDetail",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "SalesChannel",
           "Identifier": "SalesChannel",
           "Module": "Sales",
@@ -113,6 +143,18 @@
           "Identifier": "Uom",
           "Module": "Merchandise",
           "PermissionKey": "Merchandise:Uom"
+        },
+        {
+          "Tablename": "Vendor",
+          "Identifier": "Vendor",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "VendorContact",
+          "Identifier": "VendorContact",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
         }
       ]
     }

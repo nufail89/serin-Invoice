@@ -76,6 +76,45 @@ namespace MVC
 
         }
 
+        public static class Merchandise
+        {
+            public static class Brand
+            {
+                public const string BrandIndex = "~/Modules/Merchandise/Brand/BrandIndex.cshtml";
+            }
+
+            public static class Category
+            {
+                public const string CategoryIndex = "~/Modules/Merchandise/Category/CategoryIndex.cshtml";
+            }
+
+            public static class Colour
+            {
+                public const string ColourIndex = "~/Modules/Merchandise/Colour/ColourIndex.cshtml";
+            }
+
+            public static class Flavour
+            {
+                public const string FlavourIndex = "~/Modules/Merchandise/Flavour/FlavourIndex.cshtml";
+            }
+
+            public static class Product
+            {
+                public const string ProductIndex = "~/Modules/Merchandise/Product/ProductIndex.cshtml";
+            }
+
+            public static class Size
+            {
+                public const string SizeIndex = "~/Modules/Merchandise/Size/SizeIndex.cshtml";
+            }
+
+            public static class Uom
+            {
+                public const string UomIndex = "~/Modules/Merchandise/Uom/UomIndex.cshtml";
+            }
+
+        }
+
         public static class Sales
         {
             public static class Customer
