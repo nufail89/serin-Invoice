@@ -33,7 +33,7 @@ namespace Indotalent
 
         public static bool IsForeignKeyException(Exception e, out ForeignKeyExceptionInfo fk)
         {
-            // sample message: The DELETE statement conflicted with the REFERENCE constraint "FK_SomeTable_SomeFieldID". The conflict occurred in database "DBSome", table "dbo.SomeTable", column 'SomeFieldID'.
+            // sample message: The DELETE statement conflicted with the REFERENCE constraint "FK_SomeTable_SomeFieldID". The conflict occurred in database "DBSome", table "SomeTable", column 'SomeFieldID'.
 
             var sql = e as SqlException;
             if (sql != null && sql.Errors.Count > 0 && sql.Errors[0].Number == 547)
@@ -51,8 +51,8 @@ namespace Indotalent
                     if (idx2 >= 0)
                     {
                         fk.TableName = msg.Substring(idx, idx2 - idx);
-                        if (fk.TableName.StartsWith("dbo."))
-                            fk.TableName = fk.TableName.Substring("dbo.".Length);
+                        if (fk.TableName.StartsWith(""))
+                            fk.TableName = fk.TableName.Substring("".Length);
                     }
                 }
 
@@ -83,8 +83,8 @@ namespace Indotalent
                     if (idx2 >= 0)
                     {
                         pk.TableName = msg.Substring(idx, idx2 - idx);
-                        if (pk.TableName.StartsWith("dbo."))
-                            pk.TableName = pk.TableName.Substring("dbo.".Length);
+                        if (pk.TableName.StartsWith(""))
+                            pk.TableName = pk.TableName.Substring("".Length);
                     }
                 }
 

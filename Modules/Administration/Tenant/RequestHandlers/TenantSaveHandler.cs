@@ -1,4 +1,5 @@
-﻿using Serenity;
+﻿using Indotalent.Settings;
+using Serenity;
 using Serenity.Data;
 using Serenity.Services;
 using System;
@@ -16,6 +17,16 @@ namespace Indotalent.Administration
         public TenantSaveHandler(IRequestContext context)
              : base(context)
         {
+        }
+
+        protected override void AfterSave()
+        {
+            base.AfterSave();
+
+            if (this.IsCreate && Permissions.HasPermission(PermissionKeys.Tenant))
+            {
+                MultiTenantHelper.GenerateDefaultBusinessEntity(this.Connection, Row.TenantId);
+            }
         }
     }
 }

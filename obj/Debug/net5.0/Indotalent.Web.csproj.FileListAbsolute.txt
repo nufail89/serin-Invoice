@@ -1472,3 +1472,6 @@ C:/Users/ASSALAM/KelIII/Indotalent.Web/obj/Debug/net5.0/Indotalent.Web.genruntim
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Settings/PurchaseTax/PurchaseTaxIndex.cshtml.g.cs
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Settings/SalesTax/SalesTaxIndex.cshtml.g.cs
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Sales/SalesOrder/SalesOrderPrint.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/Bill/BillPrint.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/PurchaseOrder/PurchaseOrderPrint.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/BillPayment/BillPaymentPrint.cshtml.g.cs

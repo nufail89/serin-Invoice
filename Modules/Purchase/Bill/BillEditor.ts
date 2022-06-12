@@ -31,7 +31,4 @@ namespace Indotalent.Purchase {
 
 
     }
-
-
-
 }

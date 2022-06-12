@@ -1233,27 +1233,30 @@ declare namespace Indotalent.Purchase {
     }
 }
 declare namespace Indotalent.Purchase {
+    interface BillCurrencyRequest extends Serenity.ServiceRequest {
+    }
+}
+declare namespace Indotalent.Purchase {
+    interface BillCurrencyResponse extends Serenity.ServiceResponse {
+        Currency?: string;
+    }
+}
+declare namespace Indotalent.Purchase {
     class BillDetailColumns {
         static columnsKey: string;
     }
 }
 declare namespace Indotalent.Purchase {
     interface BillDetailForm {
-        BillId: Serenity.IntegerEditor;
-        ProductId: Serenity.IntegerEditor;
+        ProductId: Serenity.LookupEditor;
         Price: Serenity.DecimalEditor;
         Qty: Serenity.DecimalEditor;
-        SubTotal: Serenity.DecimalEditor;
         Discount: Serenity.DecimalEditor;
-        BeforeTax: Serenity.DecimalEditor;
         TaxPercentage: Serenity.DecimalEditor;
+        SubTotal: Serenity.DecimalEditor;
+        BeforeTax: Serenity.DecimalEditor;
         TaxAmount: Serenity.DecimalEditor;
         Total: Serenity.DecimalEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
     }
     class BillDetailForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1274,19 +1277,24 @@ declare namespace Indotalent.Purchase {
         TaxPercentage?: number;
         TaxAmount?: number;
         Total?: number;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
+        ProductName?: string;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace BillDetailRow {
         const idProperty = "Id";
+        const nameProperty = "ProductName";
         const localTextPrefix = "Purchase.BillDetail";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const lookupKey = "Purchase.BillDetail";
+        function getLookup(): Q.Lookup<BillDetailRow>;
+        const deletePermission = "Purchase:Bill";
+        const insertPermission = "Purchase:Bill";
+        const readPermission = "Purchase:Bill";
+        const updatePermission = "Purchase:Bill";
         const enum Fields {
             Id = "Id",
             BillId = "BillId",
@@ -1299,11 +1307,13 @@ declare namespace Indotalent.Purchase {
             TaxPercentage = "TaxPercentage",
             TaxAmount = "TaxAmount",
             Total = "Total",
-            InsertDate = "InsertDate",
+            ProductName = "ProductName",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -1327,22 +1337,26 @@ declare namespace Indotalent.Purchase {
 declare namespace Indotalent.Purchase {
     interface BillForm {
         Number: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        ExternalReferenceNumber: Serenity.StringEditor;
-        ProcurementGroup: Serenity.StringEditor;
         BillDate: Serenity.DateEditor;
-        PurchaseOrderId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
+        PurchaseOrderId: Serenity.LookupEditor;
+        ExternalReferenceNumber: Serenity.StringEditor;
+        ItemList: BillDetailEditor;
+        CurrencyName: Serenity.StringEditor;
         SubTotal: Serenity.DecimalEditor;
         Discount: Serenity.DecimalEditor;
         BeforeTax: Serenity.DecimalEditor;
         TaxAmount: Serenity.DecimalEditor;
-        Total: Serenity.DecimalEditor;
         OtherCharge: Serenity.DecimalEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        Total: Serenity.DecimalEditor;
+        VendorName: Serenity.StringEditor;
+        VendorStreet: Serenity.StringEditor;
+        VendorCity: Serenity.StringEditor;
+        VendorState: Serenity.StringEditor;
+        VendorZipCode: Serenity.StringEditor;
+        VendorPhone: Serenity.StringEditor;
+        VendorEmail: Serenity.StringEditor;
+        BillPaymentList: BillPaymentEditor;
     }
     class BillForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1356,20 +1370,31 @@ declare namespace Indotalent.Purchase {
     }
 }
 declare namespace Indotalent.Purchase {
+    interface BillPaymentCurrencyRequest extends Serenity.ServiceRequest {
+    }
+}
+declare namespace Indotalent.Purchase {
+    interface BillPaymentCurrencyResponse extends Serenity.ServiceResponse {
+        Currency?: string;
+    }
+}
+declare namespace Indotalent.Purchase {
     interface BillPaymentForm {
-        BillId: Serenity.IntegerEditor;
         Number: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        ProcurementGroup: Serenity.StringEditor;
-        PaymentDate: Serenity.DateEditor;
-        CashBankId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
+        BillId: Serenity.LookupEditor;
         BillAmount: Serenity.DecimalEditor;
+        CurrencyName: Serenity.StringEditor;
+        PaymentDate: Serenity.DateEditor;
+        CashBankId: Serenity.LookupEditor;
         PaymentAmount: Serenity.DecimalEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        VendorName: Serenity.StringEditor;
+        VendorStreet: Serenity.StringEditor;
+        VendorCity: Serenity.StringEditor;
+        VendorState: Serenity.StringEditor;
+        VendorZipCode: Serenity.StringEditor;
+        VendorPhone: Serenity.StringEditor;
+        VendorEmail: Serenity.StringEditor;
     }
     class BillPaymentForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1383,40 +1408,68 @@ declare namespace Indotalent.Purchase {
         BillId?: number;
         Number?: string;
         Description?: string;
-        ProcurementGroup?: string;
         PaymentDate?: string;
         CashBankId?: number;
         BillAmount?: number;
         PaymentAmount?: number;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
+        BillNumber?: string;
+        CashBankName?: string;
+        PurchaseOrderId?: number;
+        VendorId?: number;
+        VendorName?: string;
+        VendorStreet?: string;
+        VendorCity?: string;
+        VendorState?: string;
+        VendorZipCode?: string;
+        VendorPhone?: string;
+        VendorEmail?: string;
+        ProcurementGroup?: string;
+        CurrencyName?: string;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace BillPaymentRow {
         const idProperty = "Id";
         const nameProperty = "Number";
         const localTextPrefix = "Purchase.BillPayment";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const lookupKey = "Purchase.BillPayment";
+        function getLookup(): Q.Lookup<BillPaymentRow>;
+        const deletePermission = "Purchase:BillPayment";
+        const insertPermission = "Purchase:BillPayment";
+        const readPermission = "Purchase:BillPayment";
+        const updatePermission = "Purchase:BillPayment";
         const enum Fields {
             Id = "Id",
             BillId = "BillId",
             Number = "Number",
             Description = "Description",
-            ProcurementGroup = "ProcurementGroup",
             PaymentDate = "PaymentDate",
             CashBankId = "CashBankId",
             BillAmount = "BillAmount",
             PaymentAmount = "PaymentAmount",
-            InsertDate = "InsertDate",
+            BillNumber = "BillNumber",
+            CashBankName = "CashBankName",
+            PurchaseOrderId = "PurchaseOrderId",
+            VendorId = "VendorId",
+            VendorName = "VendorName",
+            VendorStreet = "VendorStreet",
+            VendorCity = "VendorCity",
+            VendorState = "VendorState",
+            VendorZipCode = "VendorZipCode",
+            VendorPhone = "VendorPhone",
+            VendorEmail = "VendorEmail",
+            ProcurementGroup = "ProcurementGroup",
+            CurrencyName = "CurrencyName",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -1428,12 +1481,14 @@ declare namespace Indotalent.Purchase {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BillPaymentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BillPaymentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Currency(request: BillPaymentCurrencyRequest, onSuccess?: (response: BillPaymentCurrencyResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "Purchase/BillPayment/Create",
             Update = "Purchase/BillPayment/Update",
             Delete = "Purchase/BillPayment/Delete",
             Retrieve = "Purchase/BillPayment/Retrieve",
-            List = "Purchase/BillPayment/List"
+            List = "Purchase/BillPayment/List",
+            Currency = "Purchase/BillPayment/Currency"
         }
     }
 }
@@ -1443,48 +1498,76 @@ declare namespace Indotalent.Purchase {
         Number?: string;
         Description?: string;
         ExternalReferenceNumber?: string;
-        ProcurementGroup?: string;
         BillDate?: string;
         PurchaseOrderId?: number;
+        PurchaseOrderNumber?: string;
         SubTotal?: number;
         Discount?: number;
         BeforeTax?: number;
         TaxAmount?: number;
         Total?: number;
         OtherCharge?: number;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
+        VendorId?: number;
+        VendorName?: string;
+        VendorStreet?: string;
+        VendorCity?: string;
+        VendorState?: string;
+        VendorZipCode?: string;
+        VendorPhone?: string;
+        VendorEmail?: string;
+        ProcurementGroup?: string;
+        CurrencyName?: string;
         TenantId?: number;
+        TenantName?: string;
+        ItemList?: BillDetailRow[];
+        BillPaymentList?: BillPaymentRow[];
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace BillRow {
         const idProperty = "Id";
         const nameProperty = "Number";
         const localTextPrefix = "Purchase.Bill";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const lookupKey = "Purchase.Bill";
+        function getLookup(): Q.Lookup<BillRow>;
+        const deletePermission = "Purchase:Bill";
+        const insertPermission = "Purchase:Bill";
+        const readPermission = "Purchase:Bill";
+        const updatePermission = "Purchase:Bill";
         const enum Fields {
             Id = "Id",
             Number = "Number",
             Description = "Description",
             ExternalReferenceNumber = "ExternalReferenceNumber",
-            ProcurementGroup = "ProcurementGroup",
             BillDate = "BillDate",
             PurchaseOrderId = "PurchaseOrderId",
+            PurchaseOrderNumber = "PurchaseOrderNumber",
             SubTotal = "SubTotal",
             Discount = "Discount",
             BeforeTax = "BeforeTax",
             TaxAmount = "TaxAmount",
             Total = "Total",
             OtherCharge = "OtherCharge",
-            InsertDate = "InsertDate",
+            VendorId = "VendorId",
+            VendorName = "VendorName",
+            VendorStreet = "VendorStreet",
+            VendorCity = "VendorCity",
+            VendorState = "VendorState",
+            VendorZipCode = "VendorZipCode",
+            VendorPhone = "VendorPhone",
+            VendorEmail = "VendorEmail",
+            ProcurementGroup = "ProcurementGroup",
+            CurrencyName = "CurrencyName",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
+            ItemList = "ItemList",
+            BillPaymentList = "BillPaymentList",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -1496,12 +1579,14 @@ declare namespace Indotalent.Purchase {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BillRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BillRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Currency(request: BillCurrencyRequest, onSuccess?: (response: BillCurrencyResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "Purchase/Bill/Create",
             Update = "Purchase/Bill/Update",
             Delete = "Purchase/Bill/Delete",
             Retrieve = "Purchase/Bill/Retrieve",
-            List = "Purchase/Bill/List"
+            List = "Purchase/Bill/List",
+            Currency = "Purchase/Bill/Currency"
         }
     }
 }
@@ -1511,27 +1596,30 @@ declare namespace Indotalent.Purchase {
     }
 }
 declare namespace Indotalent.Purchase {
+    interface PurchaseOrderCurrencyRequest extends Serenity.ServiceRequest {
+    }
+}
+declare namespace Indotalent.Purchase {
+    interface PurchaseOrderCurrencyResponse extends Serenity.ServiceResponse {
+        Currency?: string;
+    }
+}
+declare namespace Indotalent.Purchase {
     class PurchaseOrderDetailColumns {
         static columnsKey: string;
     }
 }
 declare namespace Indotalent.Purchase {
     interface PurchaseOrderDetailForm {
-        PurchaseOrderId: Serenity.IntegerEditor;
-        ProductId: Serenity.IntegerEditor;
+        ProductId: Serenity.LookupEditor;
         Price: Serenity.DecimalEditor;
         Qty: Serenity.DecimalEditor;
-        SubTotal: Serenity.DecimalEditor;
         Discount: Serenity.DecimalEditor;
-        BeforeTax: Serenity.DecimalEditor;
         TaxPercentage: Serenity.DecimalEditor;
+        SubTotal: Serenity.DecimalEditor;
+        BeforeTax: Serenity.DecimalEditor;
         TaxAmount: Serenity.DecimalEditor;
         Total: Serenity.DecimalEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
     }
     class PurchaseOrderDetailForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1552,19 +1640,24 @@ declare namespace Indotalent.Purchase {
         TaxPercentage?: number;
         TaxAmount?: number;
         Total?: number;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
+        ProductName?: string;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace PurchaseOrderDetailRow {
         const idProperty = "Id";
-        const localTextPrefix = "Purchase.PurchaseOrderDetail";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const nameProperty = "ProductName";
+        const localTextPrefix = "PurchaseOrder.PurchaseOrderDetail";
+        const lookupKey = "PurchaseOrder.PurchaseOrderDetail";
+        function getLookup(): Q.Lookup<PurchaseOrderDetailRow>;
+        const deletePermission = "Purchase:PurchaseOrder";
+        const insertPermission = "Purchase:PurchaseOrder";
+        const readPermission = "Purchase:PurchaseOrder";
+        const updatePermission = "Purchase:PurchaseOrder";
         const enum Fields {
             Id = "Id",
             PurchaseOrderId = "PurchaseOrderId",
@@ -1577,11 +1670,13 @@ declare namespace Indotalent.Purchase {
             TaxPercentage = "TaxPercentage",
             TaxAmount = "TaxAmount",
             Total = "Total",
-            InsertDate = "InsertDate",
+            ProductName = "ProductName",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -1605,21 +1700,25 @@ declare namespace Indotalent.Purchase {
 declare namespace Indotalent.Purchase {
     interface PurchaseOrderForm {
         Number: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        ProcurementGroup: Serenity.StringEditor;
         OrderDate: Serenity.DateEditor;
-        VendorId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
+        VendorId: Serenity.LookupEditor;
+        ItemList: PurchaseOrderDetailEditor;
+        CurrencyName: Serenity.StringEditor;
         SubTotal: Serenity.DecimalEditor;
         Discount: Serenity.DecimalEditor;
         BeforeTax: Serenity.DecimalEditor;
         TaxAmount: Serenity.DecimalEditor;
-        Total: Serenity.DecimalEditor;
         OtherCharge: Serenity.DecimalEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        Total: Serenity.DecimalEditor;
+        VendorName: Serenity.StringEditor;
+        VendorStreet: Serenity.StringEditor;
+        VendorCity: Serenity.StringEditor;
+        VendorState: Serenity.StringEditor;
+        VendorZipCode: Serenity.StringEditor;
+        VendorPhone: Serenity.StringEditor;
+        VendorEmail: Serenity.StringEditor;
+        BillList: BillEditor;
     }
     class PurchaseOrderForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1631,8 +1730,8 @@ declare namespace Indotalent.Purchase {
     interface PurchaseOrderRow {
         Id?: number;
         Number?: string;
-        Description?: string;
         ProcurementGroup?: string;
+        Description?: string;
         OrderDate?: string;
         VendorId?: number;
         SubTotal?: number;
@@ -1641,25 +1740,38 @@ declare namespace Indotalent.Purchase {
         TaxAmount?: number;
         Total?: number;
         OtherCharge?: number;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
+        VendorName?: string;
+        VendorStreet?: string;
+        VendorCity?: string;
+        VendorState?: string;
+        VendorZipCode?: string;
+        VendorPhone?: string;
+        VendorEmail?: string;
+        CurrencyName?: string;
         TenantId?: number;
+        TenantName?: string;
+        ItemList?: PurchaseOrderDetailRow[];
+        BillList?: BillRow[];
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace PurchaseOrderRow {
         const idProperty = "Id";
         const nameProperty = "Number";
         const localTextPrefix = "Purchase.PurchaseOrder";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const lookupKey = "Purchase.PurchaseOrder";
+        function getLookup(): Q.Lookup<PurchaseOrderRow>;
+        const deletePermission = "Purchase:PurchaseOrder";
+        const insertPermission = "Purchase:PurchaseOrder";
+        const readPermission = "Purchase:PurchaseOrder";
+        const updatePermission = "Purchase:PurchaseOrder";
         const enum Fields {
             Id = "Id",
             Number = "Number",
-            Description = "Description",
             ProcurementGroup = "ProcurementGroup",
+            Description = "Description",
             OrderDate = "OrderDate",
             VendorId = "VendorId",
             SubTotal = "SubTotal",
@@ -1668,11 +1780,22 @@ declare namespace Indotalent.Purchase {
             TaxAmount = "TaxAmount",
             Total = "Total",
             OtherCharge = "OtherCharge",
-            InsertDate = "InsertDate",
+            VendorName = "VendorName",
+            VendorStreet = "VendorStreet",
+            VendorCity = "VendorCity",
+            VendorState = "VendorState",
+            VendorZipCode = "VendorZipCode",
+            VendorPhone = "VendorPhone",
+            VendorEmail = "VendorEmail",
+            CurrencyName = "CurrencyName",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
+            ItemList = "ItemList",
+            BillList = "BillList",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -1684,12 +1807,14 @@ declare namespace Indotalent.Purchase {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PurchaseOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PurchaseOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Currency(request: PurchaseOrderCurrencyRequest, onSuccess?: (response: PurchaseOrderCurrencyResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "Purchase/PurchaseOrder/Create",
             Update = "Purchase/PurchaseOrder/Update",
             Delete = "Purchase/PurchaseOrder/Delete",
             Retrieve = "Purchase/PurchaseOrder/Retrieve",
-            List = "Purchase/PurchaseOrder/List"
+            List = "Purchase/PurchaseOrder/List",
+            Currency = "Purchase/PurchaseOrder/Currency"
         }
     }
 }
@@ -1705,20 +1830,14 @@ declare namespace Indotalent.Purchase {
 }
 declare namespace Indotalent.Purchase {
     interface VendorContactForm {
-        VendorId: Serenity.IntegerEditor;
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         Street: Serenity.StringEditor;
         City: Serenity.StringEditor;
         State: Serenity.StringEditor;
         ZipCode: Serenity.StringEditor;
         Phone: Serenity.StringEditor;
         Email: Serenity.StringEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
     }
     class VendorContactForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1738,20 +1857,23 @@ declare namespace Indotalent.Purchase {
         ZipCode?: string;
         Phone?: string;
         Email?: string;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace VendorContactRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Purchase.VendorContact";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const lookupKey = "Purchase.VendorContact";
+        function getLookup(): Q.Lookup<VendorContactRow>;
+        const deletePermission = "Purchase:Vendor";
+        const insertPermission = "Purchase:Vendor";
+        const readPermission = "Purchase:Vendor";
+        const updatePermission = "Purchase:Vendor";
         const enum Fields {
             Id = "Id",
             VendorId = "VendorId",
@@ -1763,11 +1885,12 @@ declare namespace Indotalent.Purchase {
             ZipCode = "ZipCode",
             Phone = "Phone",
             Email = "Email",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -1791,18 +1914,14 @@ declare namespace Indotalent.Purchase {
 declare namespace Indotalent.Purchase {
     interface VendorForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         Street: Serenity.StringEditor;
         City: Serenity.StringEditor;
         State: Serenity.StringEditor;
         ZipCode: Serenity.StringEditor;
         Phone: Serenity.StringEditor;
         Email: Serenity.StringEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        ContactList: VendorContactEditor;
     }
     class VendorForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1821,20 +1940,24 @@ declare namespace Indotalent.Purchase {
         ZipCode?: string;
         Phone?: string;
         Email?: string;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        ContactList?: VendorContactRow[];
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace VendorRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Purchase.Vendor";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const lookupKey = "Purchase.Vendor";
+        function getLookup(): Q.Lookup<VendorRow>;
+        const deletePermission = "Purchase:Vendor";
+        const insertPermission = "Purchase:Vendor";
+        const readPermission = "Purchase:Vendor";
+        const updatePermission = "Purchase:Vendor";
         const enum Fields {
             Id = "Id",
             Name = "Name",
@@ -1845,11 +1968,13 @@ declare namespace Indotalent.Purchase {
             ZipCode = "ZipCode",
             Phone = "Phone",
             Email = "Email",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
+            ContactList = "ContactList",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -3194,6 +3319,7 @@ declare namespace Indotalent.Administration {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Administration {
@@ -3595,6 +3721,25 @@ declare namespace Indotalent.Purchase {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: BillForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
+        private recalculate;
+        protected afterLoadEntity(): void;
+        protected updateInterface(): void;
+        private setVendor;
+        protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace Indotalent.Purchase {
+    class BillEditor extends Serenity.Extensions.GridEditorBase<BillRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BillDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected updateInterface(): void;
     }
 }
 declare namespace Indotalent.Purchase {
@@ -3606,18 +3751,28 @@ declare namespace Indotalent.Purchase {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace Indotalent.Purchase {
-    class BillDetailDialog extends Serenity.EntityDialog<BillDetailRow, any> {
+    class BillDetailDialog extends Serenity.Extensions.GridEditorDialog<BillDetailRow> {
         protected getFormKey(): string;
-        protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        protected getDeletePermission(): string;
-        protected getInsertPermission(): string;
-        protected getUpdatePermission(): string;
         protected form: BillDetailForm;
+        constructor();
+        private recalculate;
+        protected updateInterface(): void;
+    }
+}
+declare namespace Indotalent.Purchase {
+    class BillDetailEditor extends Serenity.Extensions.GridEditorBase<BillDetailRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BillDetailDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+        protected validateEntity(row: BillDetailRow, id: number): boolean;
     }
 }
 declare namespace Indotalent.Purchase {
@@ -3642,6 +3797,24 @@ declare namespace Indotalent.Purchase {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: BillPaymentForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
+        protected updateInterface(): void;
+        protected afterLoadEntity(): void;
+        private setVendor;
+        protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace Indotalent.Purchase {
+    class BillPaymentEditor extends Serenity.Extensions.GridEditorBase<BillPaymentRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BillPaymentDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected updateInterface(): void;
     }
 }
 declare namespace Indotalent.Purchase {
@@ -3653,6 +3826,9 @@ declare namespace Indotalent.Purchase {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace Indotalent.Purchase {
@@ -3666,6 +3842,15 @@ declare namespace Indotalent.Purchase {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: PurchaseOrderForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
+        private recalculate;
+        protected afterLoadEntity(): void;
+        protected updateInterface(): void;
+        private setVendor;
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Purchase {
@@ -3677,18 +3862,28 @@ declare namespace Indotalent.Purchase {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace Indotalent.Purchase {
-    class PurchaseOrderDetailDialog extends Serenity.EntityDialog<PurchaseOrderDetailRow, any> {
+    class PurchaseOrderDetailDialog extends Serenity.Extensions.GridEditorDialog<PurchaseOrderDetailRow> {
         protected getFormKey(): string;
-        protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        protected getDeletePermission(): string;
-        protected getInsertPermission(): string;
-        protected getUpdatePermission(): string;
         protected form: PurchaseOrderDetailForm;
+        constructor();
+        private recalculate;
+        protected updateInterface(): void;
+    }
+}
+declare namespace Indotalent.Purchase {
+    class PurchaseOrderDetailEditor extends Serenity.Extensions.GridEditorBase<PurchaseOrderDetailRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PurchaseOrderDetailDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+        protected validateEntity(row: PurchaseOrderDetailRow, id: number): boolean;
     }
 }
 declare namespace Indotalent.Purchase {
@@ -3713,6 +3908,10 @@ declare namespace Indotalent.Purchase {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: VendorForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Purchase {
@@ -3724,19 +3923,24 @@ declare namespace Indotalent.Purchase {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Purchase {
-    class VendorContactDialog extends Serenity.EntityDialog<VendorContactRow, any> {
+    class VendorContactDialog extends Serenity.Extensions.GridEditorDialog<VendorContactRow> {
         protected getFormKey(): string;
-        protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected getDeletePermission(): string;
-        protected getInsertPermission(): string;
-        protected getUpdatePermission(): string;
         protected form: VendorContactForm;
+    }
+}
+declare namespace Indotalent.Purchase {
+    class VendorContactEditor extends Serenity.Extensions.GridEditorBase<VendorContactRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof VendorContactDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
     }
 }
 declare namespace Indotalent.Purchase {
@@ -3748,6 +3952,7 @@ declare namespace Indotalent.Purchase {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
     }
 }
 declare namespace Indotalent.Sales {
