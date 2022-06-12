@@ -1,5 +1,4 @@
-﻿
-namespace Indotalent.Settings {
+﻿namespace Indotalent.Settings {
     export interface CashBankRow {
         Id?: number;
         Name?: string;
@@ -27,40 +26,22 @@ namespace Indotalent.Settings {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const Name;
-            export declare const Description;
-            export declare const AccountNumber;
-            export declare const Street;
-            export declare const City;
-            export declare const State;
-            export declare const ZipCode;
-            export declare const Phone;
-            export declare const Email;
-            export declare const InsertDate;
-            export declare const InsertUserId;
-            export declare const UpdateDate;
-            export declare const UpdateUserId;
-            export declare const TenantId;
+        export declare const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Description = "Description",
+            AccountNumber = "AccountNumber",
+            Street = "Street",
+            City = "City",
+            State = "State",
+            ZipCode = "ZipCode",
+            Phone = "Phone",
+            Email = "Email",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
         }
-
-        [
-            'Id',
-            'Name',
-            'Description',
-            'AccountNumber',
-            'Street',
-            'City',
-            'State',
-            'ZipCode',
-            'Phone',
-            'Email',
-            'InsertDate',
-            'InsertUserId',
-            'UpdateDate',
-            'UpdateUserId',
-            'TenantId'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }

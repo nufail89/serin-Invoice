@@ -1,5 +1,4 @@
-﻿
-namespace Indotalent.Settings {
+﻿namespace Indotalent.Settings {
     export namespace MyCompanyService {
         export const baseUrl = 'Settings/MyCompany';
 
@@ -9,12 +8,12 @@ namespace Indotalent.Settings {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MyCompanyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MyCompanyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "Settings/MyCompany/Create",
+            Update = "Settings/MyCompany/Update",
+            Delete = "Settings/MyCompany/Delete",
+            Retrieve = "Settings/MyCompany/Retrieve",
+            List = "Settings/MyCompany/List"
         }
 
         [
@@ -24,10 +23,9 @@ namespace Indotalent.Settings {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>MyCompanyService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>MyCompanyService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }

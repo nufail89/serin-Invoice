@@ -1,5 +1,4 @@
-﻿
-namespace Indotalent.Settings {
+﻿namespace Indotalent.Settings {
     export interface MyCompanyRow {
         TenantId?: number;
         TenantName?: string;
@@ -54,94 +53,49 @@ namespace Indotalent.Settings {
         export const readPermission = 'Settings:MyCompany';
         export const updatePermission = 'Settings:MyCompany';
 
-        export namespace Fields {
-            export declare const TenantId;
-            export declare const TenantName;
-            export declare const Description;
-            export declare const Currency;
-            export declare const Street;
-            export declare const City;
-            export declare const State;
-            export declare const ZipCode;
-            export declare const Phone;
-            export declare const Email;
-            export declare const ProductNumberPrefix;
-            export declare const ProductNumberUseDate;
-            export declare const ProductNumberLength;
-            export declare const CustomerNumberPrefix;
-            export declare const CustomerNumberUseDate;
-            export declare const CustomerNumberLength;
-            export declare const SalesNumberPrefix;
-            export declare const SalesNumberUseDate;
-            export declare const SalesNumberLength;
-            export declare const InvoiceNumberPrefix;
-            export declare const InvoiceNumberUseDate;
-            export declare const InvoiceNumberLength;
-            export declare const InvoicePaymentNumberPrefix;
-            export declare const InvoicePaymentNumberUseDate;
-            export declare const InvoicePaymentNumberLength;
-            export declare const VendorNumberPrefix;
-            export declare const VendorNumberUseDate;
-            export declare const VendorNumberLength;
-            export declare const PurchaseNumberPrefix;
-            export declare const PurchaseNumberUseDate;
-            export declare const PurchaseNumberLength;
-            export declare const BillNumberPrefix;
-            export declare const BillNumberUseDate;
-            export declare const BillNumberLength;
-            export declare const BillPaymentNumberPrefix;
-            export declare const BillPaymentNumberUseDate;
-            export declare const BillPaymentNumberLength;
-            export declare const MaximumUser;
-            export declare const InsertDate;
-            export declare const InsertUserId;
-            export declare const UpdateDate;
-            export declare const UpdateUserId;
+        export declare const enum Fields {
+            TenantId = "TenantId",
+            TenantName = "TenantName",
+            Description = "Description",
+            Currency = "Currency",
+            Street = "Street",
+            City = "City",
+            State = "State",
+            ZipCode = "ZipCode",
+            Phone = "Phone",
+            Email = "Email",
+            ProductNumberPrefix = "ProductNumberPrefix",
+            ProductNumberUseDate = "ProductNumberUseDate",
+            ProductNumberLength = "ProductNumberLength",
+            CustomerNumberPrefix = "CustomerNumberPrefix",
+            CustomerNumberUseDate = "CustomerNumberUseDate",
+            CustomerNumberLength = "CustomerNumberLength",
+            SalesNumberPrefix = "SalesNumberPrefix",
+            SalesNumberUseDate = "SalesNumberUseDate",
+            SalesNumberLength = "SalesNumberLength",
+            InvoiceNumberPrefix = "InvoiceNumberPrefix",
+            InvoiceNumberUseDate = "InvoiceNumberUseDate",
+            InvoiceNumberLength = "InvoiceNumberLength",
+            InvoicePaymentNumberPrefix = "InvoicePaymentNumberPrefix",
+            InvoicePaymentNumberUseDate = "InvoicePaymentNumberUseDate",
+            InvoicePaymentNumberLength = "InvoicePaymentNumberLength",
+            VendorNumberPrefix = "VendorNumberPrefix",
+            VendorNumberUseDate = "VendorNumberUseDate",
+            VendorNumberLength = "VendorNumberLength",
+            PurchaseNumberPrefix = "PurchaseNumberPrefix",
+            PurchaseNumberUseDate = "PurchaseNumberUseDate",
+            PurchaseNumberLength = "PurchaseNumberLength",
+            BillNumberPrefix = "BillNumberPrefix",
+            BillNumberUseDate = "BillNumberUseDate",
+            BillNumberLength = "BillNumberLength",
+            BillPaymentNumberPrefix = "BillPaymentNumberPrefix",
+            BillPaymentNumberUseDate = "BillPaymentNumberUseDate",
+            BillPaymentNumberLength = "BillPaymentNumberLength",
+            MaximumUser = "MaximumUser",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId"
         }
-
-        [
-            'TenantId',
-            'TenantName',
-            'Description',
-            'Currency',
-            'Street',
-            'City',
-            'State',
-            'ZipCode',
-            'Phone',
-            'Email',
-            'ProductNumberPrefix',
-            'ProductNumberUseDate',
-            'ProductNumberLength',
-            'CustomerNumberPrefix',
-            'CustomerNumberUseDate',
-            'CustomerNumberLength',
-            'SalesNumberPrefix',
-            'SalesNumberUseDate',
-            'SalesNumberLength',
-            'InvoiceNumberPrefix',
-            'InvoiceNumberUseDate',
-            'InvoiceNumberLength',
-            'InvoicePaymentNumberPrefix',
-            'InvoicePaymentNumberUseDate',
-            'InvoicePaymentNumberLength',
-            'VendorNumberPrefix',
-            'VendorNumberUseDate',
-            'VendorNumberLength',
-            'PurchaseNumberPrefix',
-            'PurchaseNumberUseDate',
-            'PurchaseNumberLength',
-            'BillNumberPrefix',
-            'BillNumberUseDate',
-            'BillNumberLength',
-            'BillPaymentNumberPrefix',
-            'BillPaymentNumberUseDate',
-            'BillPaymentNumberLength',
-            'MaximumUser',
-            'InsertDate',
-            'InsertUserId',
-            'UpdateDate',
-            'UpdateUserId'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }

@@ -1460,3 +1460,14 @@ C:/Users/ASSALAM/KelIII/Indotalent.Web/obj/Debug/net5.0/Indotalent.Web.genruntim
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Product/ProductIndex.cshtml.g.cs
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Size/SizeIndex.cshtml.g.cs
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Merchandise/Uom/UomIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/Bill/BillIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/BillDetail/BillDetailIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/BillPayment/BillPaymentIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/PurchaseOrder/PurchaseOrderIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/PurchaseOrderDetail/PurchaseOrderDetailIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/Vendor/VendorIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Purchase/VendorContact/VendorContactIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Settings/CashBank/CashBankIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Settings/MyCompany/MyCompanyIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Settings/PurchaseTax/PurchaseTaxIndex.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Settings/SalesTax/SalesTaxIndex.cshtml.g.cs

@@ -13,10 +13,34 @@
       "Key": "Default",
       "Tables": [
         {
+          "Tablename": "Bill",
+          "Identifier": "Bill",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "BillDetail",
+          "Identifier": "BillDetail",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "BillPayment",
+          "Identifier": "BillPayment",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "Brand",
           "Identifier": "Brand",
           "Module": "Merchandise",
           "PermissionKey": "Merchandise:Brand"
+        },
+        {
+          "Tablename": "CashBank",
+          "Identifier": "CashBank",
+          "Module": "Settings",
+          "PermissionKey": "Administration:General"
         },
         {
           "Tablename": "Category",
@@ -73,6 +97,24 @@
           "PermissionKey": "Merchandise:Product"
         },
         {
+          "Tablename": "PurchaseOrder",
+          "Identifier": "PurchaseOrder",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "PurchaseOrderDetail",
+          "Identifier": "PurchaseOrderDetail",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "PurchaseTax",
+          "Identifier": "PurchaseTax",
+          "Module": "Settings",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "SalesChannel",
           "Identifier": "SalesChannel",
           "Module": "Sales",
@@ -93,7 +135,7 @@
         {
           "Tablename": "SalesTax",
           "Identifier": "SalesTax",
-          "Module": "Sales",
+          "Module": "Settings",
           "PermissionKey": "Sales:SalesOrder"
         },
         {
@@ -104,15 +146,27 @@
         },
         {
           "Tablename": "Tenant",
-          "Identifier": "Tenant",
-          "Module": "Administration",
-          "PermissionKey": "PermissionKeys.Tenant"
+          "Identifier": "MyCompany",
+          "Module": "Settings",
+          "PermissionKey": "Settings:MyCompany"
         },
         {
           "Tablename": "Uom",
           "Identifier": "Uom",
           "Module": "Merchandise",
           "PermissionKey": "Merchandise:Uom"
+        },
+        {
+          "Tablename": "Vendor",
+          "Identifier": "Vendor",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "VendorContact",
+          "Identifier": "VendorContact",
+          "Module": "Purchase",
+          "PermissionKey": "Administration:General"
         }
       ]
     }

@@ -1,5 +1,4 @@
-﻿
-namespace Indotalent.Purchase {
+﻿namespace Indotalent.Purchase {
     export interface BillDetailRow {
         Id?: number;
         BillId?: number;
@@ -27,42 +26,23 @@ namespace Indotalent.Purchase {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const BillId;
-            export declare const ProductId;
-            export declare const Price;
-            export declare const Qty;
-            export declare const SubTotal;
-            export declare const Discount;
-            export declare const BeforeTax;
-            export declare const TaxPercentage;
-            export declare const TaxAmount;
-            export declare const Total;
-            export declare const InsertDate;
-            export declare const InsertUserId;
-            export declare const UpdateDate;
-            export declare const UpdateUserId;
-            export declare const TenantId;
+        export declare const enum Fields {
+            Id = "Id",
+            BillId = "BillId",
+            ProductId = "ProductId",
+            Price = "Price",
+            Qty = "Qty",
+            SubTotal = "SubTotal",
+            Discount = "Discount",
+            BeforeTax = "BeforeTax",
+            TaxPercentage = "TaxPercentage",
+            TaxAmount = "TaxAmount",
+            Total = "Total",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
         }
-
-        [
-            'Id',
-            'BillId',
-            'ProductId',
-            'Price',
-            'Qty',
-            'SubTotal',
-            'Discount',
-            'BeforeTax',
-            'TaxPercentage',
-            'TaxAmount',
-            'Total',
-            'InsertDate',
-            'InsertUserId',
-            'UpdateDate',
-            'UpdateUserId',
-            'TenantId'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }

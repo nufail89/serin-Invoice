@@ -1,5 +1,4 @@
-﻿
-namespace Indotalent.Purchase {
+﻿namespace Indotalent.Purchase {
     export interface BillPaymentRow {
         Id?: number;
         BillId?: number;
@@ -26,38 +25,21 @@ namespace Indotalent.Purchase {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const BillId;
-            export declare const Number;
-            export declare const Description;
-            export declare const ProcurementGroup;
-            export declare const PaymentDate;
-            export declare const CashBankId;
-            export declare const BillAmount;
-            export declare const PaymentAmount;
-            export declare const InsertDate;
-            export declare const InsertUserId;
-            export declare const UpdateDate;
-            export declare const UpdateUserId;
-            export declare const TenantId;
+        export declare const enum Fields {
+            Id = "Id",
+            BillId = "BillId",
+            Number = "Number",
+            Description = "Description",
+            ProcurementGroup = "ProcurementGroup",
+            PaymentDate = "PaymentDate",
+            CashBankId = "CashBankId",
+            BillAmount = "BillAmount",
+            PaymentAmount = "PaymentAmount",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
         }
-
-        [
-            'Id',
-            'BillId',
-            'Number',
-            'Description',
-            'ProcurementGroup',
-            'PaymentDate',
-            'CashBankId',
-            'BillAmount',
-            'PaymentAmount',
-            'InsertDate',
-            'InsertUserId',
-            'UpdateDate',
-            'UpdateUserId',
-            'TenantId'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }

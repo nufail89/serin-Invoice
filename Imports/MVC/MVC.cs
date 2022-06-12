@@ -115,6 +115,45 @@ namespace MVC
 
         }
 
+        public static class Purchase
+        {
+            public static class Bill
+            {
+                public const string BillIndex = "~/Modules/Purchase/Bill/BillIndex.cshtml";
+            }
+
+            public static class BillDetail
+            {
+                public const string BillDetailIndex = "~/Modules/Purchase/BillDetail/BillDetailIndex.cshtml";
+            }
+
+            public static class BillPayment
+            {
+                public const string BillPaymentIndex = "~/Modules/Purchase/BillPayment/BillPaymentIndex.cshtml";
+            }
+
+            public static class PurchaseOrder
+            {
+                public const string PurchaseOrderIndex = "~/Modules/Purchase/PurchaseOrder/PurchaseOrderIndex.cshtml";
+            }
+
+            public static class PurchaseOrderDetail
+            {
+                public const string PurchaseOrderDetailIndex = "~/Modules/Purchase/PurchaseOrderDetail/PurchaseOrderDetailIndex.cshtml";
+            }
+
+            public static class Vendor
+            {
+                public const string VendorIndex = "~/Modules/Purchase/Vendor/VendorIndex.cshtml";
+            }
+
+            public static class VendorContact
+            {
+                public const string VendorContactIndex = "~/Modules/Purchase/VendorContact/VendorContactIndex.cshtml";
+            }
+
+        }
+
         public static class Sales
         {
             public static class Customer
@@ -155,6 +194,30 @@ namespace MVC
             public static class SalesOrderDetail
             {
                 public const string SalesOrderDetailIndex = "~/Modules/Sales/SalesOrderDetail/SalesOrderDetailIndex.cshtml";
+            }
+
+        }
+
+        public static class Settings
+        {
+            public static class CashBank
+            {
+                public const string CashBankIndex = "~/Modules/Settings/CashBank/CashBankIndex.cshtml";
+            }
+
+            public static class MyCompany
+            {
+                public const string MyCompanyIndex = "~/Modules/Settings/MyCompany/MyCompanyIndex.cshtml";
+            }
+
+            public static class PurchaseTax
+            {
+                public const string PurchaseTaxIndex = "~/Modules/Settings/PurchaseTax/PurchaseTaxIndex.cshtml";
+            }
+
+            public static class SalesTax
+            {
+                public const string SalesTaxIndex = "~/Modules/Settings/SalesTax/SalesTaxIndex.cshtml";
             }
         }
 

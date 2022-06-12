@@ -1,5 +1,4 @@
-﻿
-namespace Indotalent.Settings {
+﻿namespace Indotalent.Settings {
     export interface PurchaseTaxRow {
         Id?: number;
         Name?: string;
@@ -21,28 +20,16 @@ namespace Indotalent.Settings {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const Name;
-            export declare const Description;
-            export declare const TaxRatePercentage;
-            export declare const InsertDate;
-            export declare const InsertUserId;
-            export declare const UpdateDate;
-            export declare const UpdateUserId;
-            export declare const TenantId;
+        export declare const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Description = "Description",
+            TaxRatePercentage = "TaxRatePercentage",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            TenantId = "TenantId"
         }
-
-        [
-            'Id',
-            'Name',
-            'Description',
-            'TaxRatePercentage',
-            'InsertDate',
-            'InsertUserId',
-            'UpdateDate',
-            'UpdateUserId',
-            'TenantId'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
