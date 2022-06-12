@@ -13,6 +13,24 @@
       "Key": "Default",
       "Tables": [
         {
+          "Tablename": "Brand",
+          "Identifier": "Brand",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Brand"
+        },
+        {
+          "Tablename": "Category",
+          "Identifier": "Category",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Category"
+        },
+        {
+          "Tablename": "Colour",
+          "Identifier": "Colour",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Colour"
+        },
+        {
           "Tablename": "Customer",
           "Identifier": "Customer",
           "Module": "Sales",
@@ -23,6 +41,12 @@
           "Identifier": "CustomerContact",
           "Module": "Sales",
           "PermissionKey": "Sales:Customer"
+        },
+        {
+          "Tablename": "Flavour",
+          "Identifier": "Flavour",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Flavour"
         },
         {
           "Tablename": "Invoice",
@@ -41,6 +65,12 @@
           "Identifier": "InvoicePayment",
           "Module": "Sales",
           "PermissionKey": "Sales:Invoice"
+        },
+        {
+          "Tablename": "Product",
+          "Identifier": "Product",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Product"
         },
         {
           "Tablename": "SalesChannel",
@@ -67,10 +97,22 @@
           "PermissionKey": "Sales:SalesOrder"
         },
         {
+          "Tablename": "Size",
+          "Identifier": "Size",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Size"
+        },
+        {
           "Tablename": "Tenant",
           "Identifier": "Tenant",
           "Module": "Administration",
           "PermissionKey": "PermissionKeys.Tenant"
+        },
+        {
+          "Tablename": "Uom",
+          "Identifier": "Uom",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Uom"
         }
       ]
     }
