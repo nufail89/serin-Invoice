@@ -690,12 +690,7 @@ declare namespace Indotalent.Merchandise {
 declare namespace Indotalent.Merchandise {
     interface BrandForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
     }
     class BrandForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -708,16 +703,19 @@ declare namespace Indotalent.Merchandise {
         Id?: number;
         Name?: string;
         Description?: string;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace BrandRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Merchandise.Brand";
+        const lookupKey = "Merchandise.Brand";
+        function getLookup(): Q.Lookup<BrandRow>;
         const deletePermission = "Merchandise:Brand";
         const insertPermission = "Merchandise:Brand";
         const readPermission = "Merchandise:Brand";
@@ -726,11 +724,12 @@ declare namespace Indotalent.Merchandise {
             Id = "Id",
             Name = "Name",
             Description = "Description",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -759,12 +758,7 @@ declare namespace Indotalent.Merchandise {
 declare namespace Indotalent.Merchandise {
     interface CategoryForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
     }
     class CategoryForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -777,16 +771,19 @@ declare namespace Indotalent.Merchandise {
         Id?: number;
         Name?: string;
         Description?: string;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace CategoryRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Merchandise.Category";
+        const lookupKey = "Merchandise.Category";
+        function getLookup(): Q.Lookup<CategoryRow>;
         const deletePermission = "Merchandise:Category";
         const insertPermission = "Merchandise:Category";
         const readPermission = "Merchandise:Category";
@@ -795,11 +792,12 @@ declare namespace Indotalent.Merchandise {
             Id = "Id",
             Name = "Name",
             Description = "Description",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -828,12 +826,7 @@ declare namespace Indotalent.Merchandise {
 declare namespace Indotalent.Merchandise {
     interface ColourForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
     }
     class ColourForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -846,16 +839,19 @@ declare namespace Indotalent.Merchandise {
         Id?: number;
         Name?: string;
         Description?: string;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace ColourRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Merchandise.Colour";
+        const lookupKey = "Merchandise.Colour";
+        function getLookup(): Q.Lookup<ColourRow>;
         const deletePermission = "Merchandise:Colour";
         const insertPermission = "Merchandise:Colour";
         const readPermission = "Merchandise:Colour";
@@ -864,11 +860,12 @@ declare namespace Indotalent.Merchandise {
             Id = "Id",
             Name = "Name",
             Description = "Description",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -897,12 +894,7 @@ declare namespace Indotalent.Merchandise {
 declare namespace Indotalent.Merchandise {
     interface FlavourForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
     }
     class FlavourForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -915,16 +907,19 @@ declare namespace Indotalent.Merchandise {
         Id?: number;
         Name?: string;
         Description?: string;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace FlavourRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Merchandise.Flavour";
+        const lookupKey = "Merchandise.Flavour";
+        function getLookup(): Q.Lookup<FlavourRow>;
         const deletePermission = "Merchandise:Flavour";
         const insertPermission = "Merchandise:Flavour";
         const readPermission = "Merchandise:Flavour";
@@ -933,11 +928,12 @@ declare namespace Indotalent.Merchandise {
             Id = "Id",
             Name = "Name",
             Description = "Description",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -1103,12 +1099,7 @@ declare namespace Indotalent.Merchandise {
 declare namespace Indotalent.Merchandise {
     interface SizeForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
     }
     class SizeForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1121,16 +1112,19 @@ declare namespace Indotalent.Merchandise {
         Id?: number;
         Name?: string;
         Description?: string;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace SizeRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Merchandise.Size";
+        const lookupKey = "Merchandise.Size";
+        function getLookup(): Q.Lookup<SizeRow>;
         const deletePermission = "Merchandise:Size";
         const insertPermission = "Merchandise:Size";
         const readPermission = "Merchandise:Size";
@@ -1139,11 +1133,12 @@ declare namespace Indotalent.Merchandise {
             Id = "Id",
             Name = "Name",
             Description = "Description",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -1172,12 +1167,7 @@ declare namespace Indotalent.Merchandise {
 declare namespace Indotalent.Merchandise {
     interface UomForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
     }
     class UomForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1190,16 +1180,19 @@ declare namespace Indotalent.Merchandise {
         Id?: number;
         Name?: string;
         Description?: string;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace UomRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Merchandise.Uom";
+        const lookupKey = "Merchandise.Uom";
+        function getLookup(): Q.Lookup<UomRow>;
         const deletePermission = "Merchandise:Uom";
         const insertPermission = "Merchandise:Uom";
         const readPermission = "Merchandise:Uom";
@@ -1208,11 +1201,12 @@ declare namespace Indotalent.Merchandise {
             Id = "Id",
             Name = "Name",
             Description = "Description",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -2007,11 +2001,17 @@ declare namespace Indotalent.Sales {
         TenantId?: number;
         TenantName?: string;
         ContactList?: CustomerContactRow[];
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace CustomerRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Sales.Customer";
+        const lookupKey = "Sales.Customer";
+        function getLookup(): Q.Lookup<CustomerRow>;
         const deletePermission = "Sales:Customer";
         const insertPermission = "Sales:Customer";
         const readPermission = "Sales:Customer";
@@ -2028,7 +2028,11 @@ declare namespace Indotalent.Sales {
             Email = "Email",
             TenantId = "TenantId",
             TenantName = "TenantName",
-            ContactList = "ContactList"
+            ContactList = "ContactList",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -2472,6 +2476,15 @@ declare namespace Indotalent.Sales {
     }
 }
 declare namespace Indotalent.Sales {
+    interface SalesOrderCurrencyRequest extends Serenity.ServiceRequest {
+    }
+}
+declare namespace Indotalent.Sales {
+    interface SalesOrderCurrencyResponse extends Serenity.ServiceResponse {
+        Currency?: string;
+    }
+}
+declare namespace Indotalent.Sales {
     class SalesOrderDetailColumns {
         static columnsKey: string;
     }
@@ -2567,22 +2580,26 @@ declare namespace Indotalent.Sales {
 declare namespace Indotalent.Sales {
     interface SalesOrderForm {
         Number: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-        SalesGroup: Serenity.StringEditor;
         OrderDate: Serenity.DateEditor;
-        CustomerId: Serenity.IntegerEditor;
-        SalesChannelId: Serenity.IntegerEditor;
+        Description: Serenity.TextAreaEditor;
+        CustomerId: Serenity.LookupEditor;
+        SalesChannelId: Serenity.LookupEditor;
+        ItemList: SalesOrderDetailEditor;
+        CurrencyName: Serenity.StringEditor;
         SubTotal: Serenity.DecimalEditor;
         Discount: Serenity.DecimalEditor;
         BeforeTax: Serenity.DecimalEditor;
         TaxAmount: Serenity.DecimalEditor;
-        Total: Serenity.DecimalEditor;
         OtherCharge: Serenity.DecimalEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
+        Total: Serenity.DecimalEditor;
+        CustomerName: Serenity.StringEditor;
+        CustomerStreet: Serenity.StringEditor;
+        CustomerCity: Serenity.StringEditor;
+        CustomerState: Serenity.StringEditor;
+        CustomerZipCode: Serenity.StringEditor;
+        CustomerPhone: Serenity.StringEditor;
+        CustomerEmail: Serenity.StringEditor;
+        InvoiceList: InvoiceEditor;
     }
     class SalesOrderForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2594,27 +2611,41 @@ declare namespace Indotalent.Sales {
     interface SalesOrderRow {
         Id?: number;
         Number?: string;
-        Description?: string;
         SalesGroup?: string;
+        Description?: string;
         OrderDate?: string;
         CustomerId?: number;
-        SalesChannelId?: number;
         SubTotal?: number;
         Discount?: number;
         BeforeTax?: number;
         TaxAmount?: number;
         Total?: number;
         OtherCharge?: number;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
+        CustomerName?: string;
+        CustomerStreet?: string;
+        CustomerCity?: string;
+        CustomerState?: string;
+        CustomerZipCode?: string;
+        CustomerPhone?: string;
+        CustomerEmail?: string;
+        SalesChannelId?: number;
+        SalesChannelName?: string;
+        CurrencyName?: string;
         TenantId?: number;
+        TenantName?: string;
+        ItemList?: SalesOrderDetailRow[];
+        InvoiceList?: InvoiceRow[];
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace SalesOrderRow {
         const idProperty = "Id";
         const nameProperty = "Number";
         const localTextPrefix = "Sales.SalesOrder";
+        const lookupKey = "Sales.SalesOrder";
+        function getLookup(): Q.Lookup<SalesOrderRow>;
         const deletePermission = "Sales:SalesOrder";
         const insertPermission = "Sales:SalesOrder";
         const readPermission = "Sales:SalesOrder";
@@ -2622,22 +2653,34 @@ declare namespace Indotalent.Sales {
         const enum Fields {
             Id = "Id",
             Number = "Number",
-            Description = "Description",
             SalesGroup = "SalesGroup",
+            Description = "Description",
             OrderDate = "OrderDate",
             CustomerId = "CustomerId",
-            SalesChannelId = "SalesChannelId",
             SubTotal = "SubTotal",
             Discount = "Discount",
             BeforeTax = "BeforeTax",
             TaxAmount = "TaxAmount",
             Total = "Total",
             OtherCharge = "OtherCharge",
-            InsertDate = "InsertDate",
+            CustomerName = "CustomerName",
+            CustomerStreet = "CustomerStreet",
+            CustomerCity = "CustomerCity",
+            CustomerState = "CustomerState",
+            CustomerZipCode = "CustomerZipCode",
+            CustomerPhone = "CustomerPhone",
+            CustomerEmail = "CustomerEmail",
+            SalesChannelId = "SalesChannelId",
+            SalesChannelName = "SalesChannelName",
+            CurrencyName = "CurrencyName",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
+            ItemList = "ItemList",
+            InvoiceList = "InvoiceList",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -2649,12 +2692,14 @@ declare namespace Indotalent.Sales {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SalesOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SalesOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Currency(request: SalesOrderCurrencyRequest, onSuccess?: (response: SalesOrderCurrencyResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "Sales/SalesOrder/Create",
             Update = "Sales/SalesOrder/Update",
             Delete = "Sales/SalesOrder/Delete",
             Retrieve = "Sales/SalesOrder/Retrieve",
-            List = "Sales/SalesOrder/List"
+            List = "Sales/SalesOrder/List",
+            Currency = "Sales/SalesOrder/Currency"
         }
     }
 }
@@ -2676,7 +2721,7 @@ declare namespace Indotalent.Settings {
 declare namespace Indotalent.Settings {
     interface CashBankForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         AccountNumber: Serenity.StringEditor;
         Street: Serenity.StringEditor;
         City: Serenity.StringEditor;
@@ -2684,11 +2729,6 @@ declare namespace Indotalent.Settings {
         ZipCode: Serenity.StringEditor;
         Phone: Serenity.StringEditor;
         Email: Serenity.StringEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
     }
     class CashBankForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2708,20 +2748,23 @@ declare namespace Indotalent.Settings {
         ZipCode?: string;
         Phone?: string;
         Email?: string;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace CashBankRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Settings.CashBank";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const lookupKey = "Settings.CashBank";
+        function getLookup(): Q.Lookup<CashBankRow>;
+        const deletePermission = "Settings:CashBank";
+        const insertPermission = "Settings:CashBank";
+        const readPermission = "Settings:CashBank";
+        const updatePermission = "Settings:CashBank";
         const enum Fields {
             Id = "Id",
             Name = "Name",
@@ -2733,11 +2776,12 @@ declare namespace Indotalent.Settings {
             ZipCode = "ZipCode",
             Phone = "Phone",
             Email = "Email",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -2766,7 +2810,7 @@ declare namespace Indotalent.Settings {
 declare namespace Indotalent.Settings {
     interface MyCompanyForm {
         TenantName: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         Currency: Serenity.StringEditor;
         Street: Serenity.StringEditor;
         City: Serenity.StringEditor;
@@ -2775,37 +2819,33 @@ declare namespace Indotalent.Settings {
         Phone: Serenity.StringEditor;
         Email: Serenity.StringEditor;
         ProductNumberPrefix: Serenity.StringEditor;
-        ProductNumberUseDate: Serenity.IntegerEditor;
+        ProductNumberUseDate: Serenity.BooleanEditor;
         ProductNumberLength: Serenity.IntegerEditor;
         CustomerNumberPrefix: Serenity.StringEditor;
-        CustomerNumberUseDate: Serenity.IntegerEditor;
+        CustomerNumberUseDate: Serenity.BooleanEditor;
         CustomerNumberLength: Serenity.IntegerEditor;
         SalesNumberPrefix: Serenity.StringEditor;
-        SalesNumberUseDate: Serenity.IntegerEditor;
+        SalesNumberUseDate: Serenity.BooleanEditor;
         SalesNumberLength: Serenity.IntegerEditor;
         InvoiceNumberPrefix: Serenity.StringEditor;
-        InvoiceNumberUseDate: Serenity.IntegerEditor;
+        InvoiceNumberUseDate: Serenity.BooleanEditor;
         InvoiceNumberLength: Serenity.IntegerEditor;
         InvoicePaymentNumberPrefix: Serenity.StringEditor;
-        InvoicePaymentNumberUseDate: Serenity.IntegerEditor;
+        InvoicePaymentNumberUseDate: Serenity.BooleanEditor;
         InvoicePaymentNumberLength: Serenity.IntegerEditor;
         VendorNumberPrefix: Serenity.StringEditor;
-        VendorNumberUseDate: Serenity.IntegerEditor;
+        VendorNumberUseDate: Serenity.BooleanEditor;
         VendorNumberLength: Serenity.IntegerEditor;
         PurchaseNumberPrefix: Serenity.StringEditor;
-        PurchaseNumberUseDate: Serenity.IntegerEditor;
+        PurchaseNumberUseDate: Serenity.BooleanEditor;
         PurchaseNumberLength: Serenity.IntegerEditor;
         BillNumberPrefix: Serenity.StringEditor;
-        BillNumberUseDate: Serenity.IntegerEditor;
+        BillNumberUseDate: Serenity.BooleanEditor;
         BillNumberLength: Serenity.IntegerEditor;
         BillPaymentNumberPrefix: Serenity.StringEditor;
-        BillPaymentNumberUseDate: Serenity.IntegerEditor;
+        BillPaymentNumberUseDate: Serenity.BooleanEditor;
         BillPaymentNumberLength: Serenity.IntegerEditor;
         MaximumUser: Serenity.IntegerEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
     }
     class MyCompanyForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2825,38 +2865,38 @@ declare namespace Indotalent.Settings {
         ZipCode?: string;
         Phone?: string;
         Email?: string;
+        MaximumUser?: number;
         ProductNumberPrefix?: string;
-        ProductNumberUseDate?: number;
+        ProductNumberUseDate?: boolean;
         ProductNumberLength?: number;
         CustomerNumberPrefix?: string;
-        CustomerNumberUseDate?: number;
+        CustomerNumberUseDate?: boolean;
         CustomerNumberLength?: number;
         SalesNumberPrefix?: string;
-        SalesNumberUseDate?: number;
+        SalesNumberUseDate?: boolean;
         SalesNumberLength?: number;
         InvoiceNumberPrefix?: string;
-        InvoiceNumberUseDate?: number;
+        InvoiceNumberUseDate?: boolean;
         InvoiceNumberLength?: number;
         InvoicePaymentNumberPrefix?: string;
-        InvoicePaymentNumberUseDate?: number;
+        InvoicePaymentNumberUseDate?: boolean;
         InvoicePaymentNumberLength?: number;
         VendorNumberPrefix?: string;
-        VendorNumberUseDate?: number;
+        VendorNumberUseDate?: boolean;
         VendorNumberLength?: number;
         PurchaseNumberPrefix?: string;
-        PurchaseNumberUseDate?: number;
+        PurchaseNumberUseDate?: boolean;
         PurchaseNumberLength?: number;
         BillNumberPrefix?: string;
-        BillNumberUseDate?: number;
+        BillNumberUseDate?: boolean;
         BillNumberLength?: number;
         BillPaymentNumberPrefix?: string;
-        BillPaymentNumberUseDate?: number;
+        BillPaymentNumberUseDate?: boolean;
         BillPaymentNumberLength?: number;
-        MaximumUser?: number;
-        InsertDate?: string;
         InsertUserId?: number;
-        UpdateDate?: string;
+        InsertDate?: string;
         UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace MyCompanyRow {
         const idProperty = "TenantId";
@@ -2877,6 +2917,7 @@ declare namespace Indotalent.Settings {
             ZipCode = "ZipCode",
             Phone = "Phone",
             Email = "Email",
+            MaximumUser = "MaximumUser",
             ProductNumberPrefix = "ProductNumberPrefix",
             ProductNumberUseDate = "ProductNumberUseDate",
             ProductNumberLength = "ProductNumberLength",
@@ -2904,11 +2945,10 @@ declare namespace Indotalent.Settings {
             BillPaymentNumberPrefix = "BillPaymentNumberPrefix",
             BillPaymentNumberUseDate = "BillPaymentNumberUseDate",
             BillPaymentNumberLength = "BillPaymentNumberLength",
-            MaximumUser = "MaximumUser",
-            InsertDate = "InsertDate",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
-            UpdateUserId = "UpdateUserId"
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -2937,13 +2977,8 @@ declare namespace Indotalent.Settings {
 declare namespace Indotalent.Settings {
     interface PurchaseTaxForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         TaxRatePercentage: Serenity.DecimalEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
     }
     class PurchaseTaxForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2957,30 +2992,34 @@ declare namespace Indotalent.Settings {
         Name?: string;
         Description?: string;
         TaxRatePercentage?: number;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace PurchaseTaxRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Settings.PurchaseTax";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const lookupKey = "Settings.PurchaseTax";
+        function getLookup(): Q.Lookup<PurchaseTaxRow>;
+        const deletePermission = "Settings:PurchaseTax";
+        const insertPermission = "Settings:PurchaseTax";
+        const readPermission = "Settings:PurchaseTax";
+        const updatePermission = "Settings:PurchaseTax";
         const enum Fields {
             Id = "Id",
             Name = "Name",
             Description = "Description",
             TaxRatePercentage = "TaxRatePercentage",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -3009,13 +3048,8 @@ declare namespace Indotalent.Settings {
 declare namespace Indotalent.Settings {
     interface SalesTaxForm {
         Name: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         TaxRatePercentage: Serenity.DecimalEditor;
-        InsertDate: Serenity.DateEditor;
-        InsertUserId: Serenity.IntegerEditor;
-        UpdateDate: Serenity.DateEditor;
-        UpdateUserId: Serenity.IntegerEditor;
-        TenantId: Serenity.IntegerEditor;
     }
     class SalesTaxForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -3029,30 +3063,34 @@ declare namespace Indotalent.Settings {
         Name?: string;
         Description?: string;
         TaxRatePercentage?: number;
-        InsertDate?: string;
-        InsertUserId?: number;
-        UpdateDate?: string;
-        UpdateUserId?: number;
         TenantId?: number;
+        TenantName?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
     }
     namespace SalesTaxRow {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Settings.SalesTax";
-        const deletePermission = "Sales:SalesOrder";
-        const insertPermission = "Sales:SalesOrder";
-        const readPermission = "Sales:SalesOrder";
-        const updatePermission = "Sales:SalesOrder";
+        const lookupKey = "Settings.SalesTax";
+        function getLookup(): Q.Lookup<SalesTaxRow>;
+        const deletePermission = "Settings:SalesTax";
+        const insertPermission = "Settings:SalesTax";
+        const readPermission = "Settings:SalesTax";
+        const updatePermission = "Settings:SalesTax";
         const enum Fields {
             Id = "Id",
             Name = "Name",
             Description = "Description",
             TaxRatePercentage = "TaxRatePercentage",
-            InsertDate = "InsertDate",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
-            UpdateDate = "UpdateDate",
+            InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            TenantId = "TenantId"
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -3344,6 +3382,10 @@ declare namespace Indotalent.Merchandise {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: BrandForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3355,6 +3397,8 @@ declare namespace Indotalent.Merchandise {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3368,6 +3412,10 @@ declare namespace Indotalent.Merchandise {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: CategoryForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3379,6 +3427,8 @@ declare namespace Indotalent.Merchandise {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3392,6 +3442,10 @@ declare namespace Indotalent.Merchandise {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: ColourForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3403,6 +3457,8 @@ declare namespace Indotalent.Merchandise {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3416,6 +3472,10 @@ declare namespace Indotalent.Merchandise {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: FlavourForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3427,6 +3487,8 @@ declare namespace Indotalent.Merchandise {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3473,6 +3535,10 @@ declare namespace Indotalent.Merchandise {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: SizeForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3484,6 +3550,8 @@ declare namespace Indotalent.Merchandise {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3497,6 +3565,10 @@ declare namespace Indotalent.Merchandise {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: UomForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Merchandise {
@@ -3508,6 +3580,8 @@ declare namespace Indotalent.Merchandise {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Purchase {
@@ -3687,6 +3761,10 @@ declare namespace Indotalent.Sales {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: CustomerForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Sales {
@@ -3703,15 +3781,9 @@ declare namespace Indotalent.Sales {
     }
 }
 declare namespace Indotalent.Sales {
-    class CustomerContactDialog extends Serenity.EntityDialog<CustomerContactRow, any> {
+    class CustomerContactDialog extends Serenity.Extensions.GridEditorDialog<CustomerContactRow> {
         protected getFormKey(): string;
-        protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected getDeletePermission(): string;
-        protected getInsertPermission(): string;
-        protected getUpdatePermission(): string;
         protected form: CustomerContactForm;
     }
 }
@@ -3882,6 +3954,15 @@ declare namespace Indotalent.Sales {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: SalesOrderForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
+        private recalculate;
+        protected afterLoadEntity(): void;
+        protected updateInterface(): void;
+        private setCustomer;
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Sales {
@@ -3893,6 +3974,9 @@ declare namespace Indotalent.Sales {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace Indotalent.Sales {
@@ -3936,6 +4020,10 @@ declare namespace Indotalent.Settings {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: CashBankForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Settings {
@@ -3947,6 +4035,8 @@ declare namespace Indotalent.Settings {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Settings {
@@ -3960,6 +4050,7 @@ declare namespace Indotalent.Settings {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: MyCompanyForm;
+        protected updateInterface(): void;
     }
 }
 declare namespace Indotalent.Settings {
@@ -3971,6 +4062,7 @@ declare namespace Indotalent.Settings {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected updateInterface(): void;
     }
 }
 declare namespace Indotalent.Settings {
@@ -3984,6 +4076,10 @@ declare namespace Indotalent.Settings {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: PurchaseTaxForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Settings {
@@ -3995,6 +4091,8 @@ declare namespace Indotalent.Settings {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Settings {
@@ -4008,6 +4106,10 @@ declare namespace Indotalent.Settings {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: SalesTaxForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
     }
 }
 declare namespace Indotalent.Settings {
@@ -4019,5 +4121,7 @@ declare namespace Indotalent.Settings {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }

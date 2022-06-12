@@ -189,6 +189,7 @@ namespace MVC
             public static class SalesOrder
             {
                 public const string SalesOrderIndex = "~/Modules/Sales/SalesOrder/SalesOrderIndex.cshtml";
+                public const string SalesOrderPrint = "~/Modules/Sales/SalesOrder/SalesOrderPrint.cshtml";
             }
 
             public static class SalesOrderDetail
