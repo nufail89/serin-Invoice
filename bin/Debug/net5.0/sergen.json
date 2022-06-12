@@ -1,0 +1,82 @@
+{
+  "RootNamespace": "Indotalent",
+  "ServerTypings": {
+    "LocalTexts": true
+  },
+  "Restore": {
+    "Exclude": [
+      "/wwwroot/Scripts/serenity/Serenity.CoreLib*.*"
+    ]
+  },
+  "Connections": [
+    {
+      "Key": "Default",
+      "Tables": [
+        {
+          "Tablename": "Customer",
+          "Identifier": "Customer",
+          "Module": "Sales",
+          "PermissionKey": "Sales:Customer"
+        },
+        {
+          "Tablename": "CustomerContact",
+          "Identifier": "CustomerContact",
+          "Module": "Sales",
+          "PermissionKey": "Sales:Customer"
+        },
+        {
+          "Tablename": "Invoice",
+          "Identifier": "Invoice",
+          "Module": "Sales",
+          "PermissionKey": "Sales:Invoice"
+        },
+        {
+          "Tablename": "InvoiceDetail",
+          "Identifier": "InvoiceDetail",
+          "Module": "Sales",
+          "PermissionKey": "Sales:Invoice"
+        },
+        {
+          "Tablename": "InvoicePayment",
+          "Identifier": "InvoicePayment",
+          "Module": "Sales",
+          "PermissionKey": "Sales:Invoice"
+        },
+        {
+          "Tablename": "SalesChannel",
+          "Identifier": "SalesChannel",
+          "Module": "Sales",
+          "PermissionKey": "Sales:SalesChannel"
+        },
+        {
+          "Tablename": "SalesOrder",
+          "Identifier": "SalesOrder",
+          "Module": "Sales",
+          "PermissionKey": "Sales:SalesOrder"
+        },
+        {
+          "Tablename": "SalesOrderDetail",
+          "Identifier": "SalesOrderDetail",
+          "Module": "Sales",
+          "PermissionKey": "Sales:SalesOrder"
+        },
+        {
+          "Tablename": "SalesTax",
+          "Identifier": "SalesTax",
+          "Module": "Sales",
+          "PermissionKey": "Sales:SalesOrder"
+        },
+        {
+          "Tablename": "Tenant",
+          "Identifier": "Tenant",
+          "Module": "Administration",
+          "PermissionKey": "PermissionKeys.Tenant"
+        }
+      ]
+    }
+  ],
+  "UpgradeInfo": {
+    "InitialType": "Community",
+    "InitialVersion": "5.2.4.0"
+  }
+}
