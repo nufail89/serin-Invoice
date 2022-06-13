@@ -14,7 +14,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 
-namespace SiPerpustakaan
+namespace Indotalent
 {
     public class DataMigrations : IDataMigrations
     { 
@@ -204,7 +204,7 @@ namespace SiPerpustakaan
             bool isFirebird = serverType.StartsWith("Firebird", StringComparison.OrdinalIgnoreCase);
 
             // safety check to ensure that we are not modifying an arbitrary database.
-            // remove these lines if you want SiPerpustakaan migrations to run on your DB.
+            
             if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
                     @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
             {
@@ -216,7 +216,7 @@ namespace SiPerpustakaan
 
             var conventionSet = new DefaultConventionSet(defaultSchemaName: null,
                 Path.GetDirectoryName(typeof(DataMigrations).Assembly.Location));
-            var migrationNamespace = "SiPerpustakaan.Migrations." + databaseKey + "DB";
+            var migrationNamespace = "Indotalent.Migrations." + databaseKey + "DB";
             var migrationAssemblies = new[] { typeof(DataMigrations).Assembly };
             if (databaseKey.Equals("Northwind", StringComparison.OrdinalIgnoreCase))
             {
