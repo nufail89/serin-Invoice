@@ -56,6 +56,7 @@ namespace Indotalent
 
                 public static class Login
                 {
+                    public static LocalText FormTitle = "Welcome to Invoice App. Management";
                     public static LocalText LoginToYourAccount = "Login to your account";
                     public static LocalText SignInButton = "Sign In";
                     public static LocalText ForgotPassword = "Forgot password?";
@@ -92,7 +93,7 @@ namespace Indotalent
         public static class Navigation
         {
             public static LocalText LogoutLink = "Logout";
-            public static LocalText SiteTitle = "Indotalent";
+            public static LocalText SiteTitle = "Invoice App. OPOP";
         }
 
         public static class Site

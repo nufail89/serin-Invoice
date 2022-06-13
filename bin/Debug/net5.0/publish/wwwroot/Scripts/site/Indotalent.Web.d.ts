@@ -3466,6 +3466,14 @@ declare namespace Indotalent.Common {
     }
 }
 declare namespace Indotalent.Membership {
+    class JazzLoginPanel extends Serenity.PropertyPanel<LoginRequest, any> {
+        protected getFormKey(): string;
+        constructor(container: JQuery);
+        protected redirectToReturnUrl(): void;
+        protected getTemplate(): string;
+    }
+}
+declare namespace Indotalent.Membership {
     class LoginPanel extends Serenity.PropertyPanel<LoginRequest, any> {
         protected getFormKey(): string;
         constructor(container: JQuery);

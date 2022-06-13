@@ -22,15 +22,23 @@ namespace Indotalent.Membership.Pages
             Cache = cache ?? throw new ArgumentNullException(nameof(cache));
             Localizer = localizer ?? throw new ArgumentNullException(nameof(localizer));
         }
-        public static bool UseAdminLTELoginBox = false;
-
+        public static bool UseAdminLTELoginBox = true;
+        public static bool UseJazzLoginBox = true;
         [HttpGet]
         public ActionResult Login(string activated)
         {
             ViewData["Activated"] = activated;
             ViewData["HideLeftNavigation"] = true;
 
-            return View(MVC.Views.Membership.Account.AccountLogin);
+            if (UseJazzLoginBox)
+            {
+                return View(MVC.Views.Membership.Account.AccountLogin_Jazz);
+            }
+
+            if (UseAdminLTELoginBox)
+                return View(MVC.Views.Membership.Account.AccountLogin_AdminLTE);
+            else
+                return View(MVC.Views.Membership.Account.AccountLogin);
         }
 
         [HttpGet]

@@ -1988,3 +1988,10 @@ C:/Users/Server/Documents/GitHub/serin-Invoice/obj/Debug/net5.0/Indotalent.Web.d
 C:/Users/Server/Documents/GitHub/serin-Invoice/obj/Debug/net5.0/ref/Indotalent.Web.dll
 C:/Users/Server/Documents/GitHub/serin-Invoice/obj/Debug/net5.0/Indotalent.Web.pdb
 C:/Users/Server/Documents/GitHub/serin-Invoice/obj/Debug/net5.0/Indotalent.Web.genruntimeconfig.cache
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Membership/Account/AccountLogin.AdminLTE.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Membership/Account/AccountLogin.Jazz.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Membership/Account/ForgotPassword/AccountForgotPassword.AdminLTE.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Membership/Account/ForgotPassword/AccountForgotPassword.Jazz.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Membership/Account/ResetPassword/AccountResetPassword.AdminLTE.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Views/Shared/_LayoutSlim.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Views/Shared/_LayoutSlimHead.cshtml.g.cs
