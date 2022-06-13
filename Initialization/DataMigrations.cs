@@ -14,12 +14,15 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 
-namespace Indotalent
+namespace SiPerpustakaan
 {
     public class DataMigrations : IDataMigrations
-    {
+    { 
         private static readonly string[] databaseKeys = new[] {
             "Default"
+            //<if:Northwind>
+            , "Northwind"
+            //</if:Northwind>
         };
 
         protected ISqlConnections SqlConnections { get; }
@@ -27,7 +30,7 @@ namespace Indotalent
 
         public DataMigrations(ISqlConnections sqlConnections, IWebHostEnvironment hostEnvironment)
         {
-            SqlConnections = sqlConnections ??
+            SqlConnections = sqlConnections ?? 
                 throw new ArgumentNullException(nameof(sqlConnections));
             HostEnvironment = hostEnvironment ??
                 throw new ArgumentNullException(nameof(hostEnvironment));
@@ -87,7 +90,7 @@ namespace Indotalent
                 using (var fbConnection = SqlConnections.New(cb.ConnectionString, cs.ProviderName, cs.Dialect))
                 {
                     ((WrappedConnection)fbConnection).ActualConnection.GetType()
-                        .GetMethod("CreateDatabase", new Type[] { typeof(string), typeof(bool) })
+                        .GetMethod("CreateDatabase", new Type[] { typeof(string), typeof(bool) }) 
                         .Invoke(null, new object[] { fbConnection.ConnectionString, false });
                 }
 
@@ -193,28 +196,33 @@ namespace Indotalent
             var cs = SqlConnections.TryGetConnectionString(databaseKey);
             if (cs == null)
                 throw new ArgumentOutOfRangeException(nameof(databaseKey));
-
+            
 
             string serverType = cs.Dialect.ServerType;
-
+            
             bool isOracle = serverType.StartsWith("Oracle", StringComparison.OrdinalIgnoreCase);
             bool isFirebird = serverType.StartsWith("Firebird", StringComparison.OrdinalIgnoreCase);
 
             // safety check to ensure that we are not modifying an arbitrary database.
-            // remove these lines if you want Indotalent migrations to run on your DB.
-            //if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
-            //        @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
-            //{
-            //    SkippedMigrations = true;
-            //    return;
-            //}
+            // remove these lines if you want SiPerpustakaan migrations to run on your DB.
+            if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
+                    @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
+            {
+                SkippedMigrations = true;
+                return;
+            }
 
             string databaseType = isOracle ? "OracleManaged" : serverType;
 
             var conventionSet = new DefaultConventionSet(defaultSchemaName: null,
                 Path.GetDirectoryName(typeof(DataMigrations).Assembly.Location));
-            var migrationNamespace = "Indotalent.Migrations." + databaseKey + "DB";
+            var migrationNamespace = "SiPerpustakaan.Migrations." + databaseKey + "DB";
             var migrationAssemblies = new[] { typeof(DataMigrations).Assembly };
+            if (databaseKey.Equals("Northwind", StringComparison.OrdinalIgnoreCase))
+            {
+                migrationNamespace = typeof(Serenity.Demo.Northwind.Migrations.MigrationAttribute).Namespace;
+                migrationAssemblies = new[] { typeof(Serenity.Demo.Northwind.Migrations.MigrationAttribute).Assembly };
+            }
 
             var serviceProvider = new ServiceCollection()
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
