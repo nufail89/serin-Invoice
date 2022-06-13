@@ -384,6 +384,8 @@ declare namespace Indotalent.Administration {
 }
 declare namespace Indotalent.Administration {
     interface UserForm {
+        IsActive: Serenity.BooleanEditor;
+        IsTenantAdmin: Serenity.BooleanEditor;
         Username: Serenity.StringEditor;
         DisplayName: Serenity.StringEditor;
         Email: Serenity.EmailEditor;
@@ -391,6 +393,7 @@ declare namespace Indotalent.Administration {
         Password: Serenity.PasswordEditor;
         PasswordConfirm: Serenity.PasswordEditor;
         Source: Serenity.StringEditor;
+        TenantId: Serenity.LookupEditor;
     }
     class UserForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -3357,6 +3360,7 @@ declare namespace Indotalent.Administration {
         protected getToolbarButtons(): Serenity.ToolButton[];
         protected updateInterface(): void;
         protected afterLoadEntity(): void;
+        protected getPropertyItems(): Serenity.PropertyItem[];
     }
 }
 declare namespace Indotalent.Administration {
@@ -3368,7 +3372,8 @@ declare namespace Indotalent.Administration {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
-        protected getDefaultSortBy(): UserRow.Fields[];
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Authorization {
