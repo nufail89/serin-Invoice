@@ -34,6 +34,7 @@
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/bin/Debug/net5.0/publish/wwwroot/assets/images/bg-images/6.png
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/bin/Debug/net5.0/publish/wwwroot/assets/images/bg-images/auth_bg.png
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/bin/Debug/net5.0/publish/wwwroot/assets/images/bg-images/bg_app.jpg
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/bin/Debug/net5.0/publish/wwwroot/assets/images/bg-images/bg_app2.webp
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/bin/Debug/net5.0/publish/wwwroot/assets/images/bg-images/photo-placeholder.png
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/bin/Debug/net5.0/publish/wwwroot/assets/js/vendor-all.js
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/bin/Debug/net5.0/publish/wwwroot/assets/plugins/animation/css/animate.min.css
