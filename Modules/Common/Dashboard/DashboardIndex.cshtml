@@ -13,11 +13,6 @@
 @section ContentHeader {
     <h1>@Localizer.Get("Navigation.Dashboard")</h1>
 }
-
-<div class="row text-center">
-    <h2>Invoice Application Serenity Based</h2>
-    <br>
-</div>
 <style>
 .s-dashboard-card, .s-dashboard-card-sm {
     margin-bottom: var(--bs-gutter-x);
@@ -100,38 +95,72 @@
 }
 </style>
 
-
+<div class="row text-center">
+    <h2>Invoice Application Serenity Based</h2>
+    <br>
+</div>
 <div class="row">
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-4 col-sm-6">
         <div class="card s-dashboard-card-sm bg-primary bg-opacity-50">
             <div class="card-body">
                 <h3>@Model.CurrentMonthSales.Amount.ToString("##,##.00")</h3>
                 <p>Sales Orders (@Model.Currency)</p>
             </div>
-            <div class="icon">
-                <i class="fa fa-shopping-cart"></i>
-            </div>
+            <a href="~/Sales/SalesOrder">
+                <div class="icon">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </a>
         </div>
     </div>
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-4 col-sm-6">
         <div class="card s-dashboard-card-sm s-alt bg-info bg-opacity-50">
             <div class="card-body">
                 <h3>@Model.CurrentMonthPurchase.Amount.ToString("##,##.00")</h3>
                 <p>Purchase Orders (@Model.Currency)</p>
             </div>
-            <div class="icon">
-                <i class="fa fa-truck"></i>
-            </div>
+            <a href="~/Purchase/PurchaseOrder">
+                <div class="icon">
+                    <i class="fa fa-truck"></i>
+                </div>
+            </a>
         </div>
     </div>
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-4 col-sm-6">
         <div class="card s-dashboard-card-sm bg-warning bg-opacity-50">
             <div class="card-body">
                 <h3>@Model.CurrentMonthMargin.Amount.ToString("##,##.00")</h3>
                 <p>Margin (@Model.Currency)</p>
             </div>
-            <div class="icon">
-                <i class="fa fa-user-plus"></i>
+            <a href="~/Sales/SalesOrder"></a>
+                <div class="icon">
+                    <i class="fa fa-user-plus"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Grafik Transaksi -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="small-box text-center widget-bg-one">
+                <div class="inner">
+                    <input type="text" class="knob" data-readonly="true" value="@Model.CurrentMonthSalesTransaction" data-width="200" data-height="200" data-fgColor="#23b7e5">
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                @* <a href="~/Sales/SalesOrder" class="small-box-footer">Sales Transaction <i class="fa fa-arrow-circle-right"></i></a> *@
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="small-box text-center widget-bg-two">
+                <div class="inner">
+                    <input type="text" class="knob" data-readonly="true" value="@Model.CurrentMonthPurchaseTransaction" data-width="200" data-height="200" data-fgColor="#23b7e5">
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                @* <a href="~/Purchase/PurchaseOrder" class="small-box-footer">Purchase Transaction <i class="fa fa-arrow-circle-right"></i></a> *@
             </div>
         </div>
     </div>

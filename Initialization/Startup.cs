@@ -55,7 +55,7 @@ namespace Indotalent
                 typeof(Serenity.Demo.Northwind.CustomerController).Assembly,
                 //</if:Northwind>
                 //<if:BasicSamples>
-                //typeof(Serenity.Demo.BasicSamples.BasicSamplesController).Assembly,
+                typeof(Serenity.Demo.BasicSamples.BasicSamplesController).Assembly,
                 //</if:BasicSamples>
             }));
 
