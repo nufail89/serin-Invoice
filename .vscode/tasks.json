@@ -41,6 +41,15 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "type": "npm",
+            "script": "install",
+            "path": "bin/Debug/net5.0/publish",
+            "group": "clean",
+            "problemMatcher": [],
+            "label": "npm: install - bin/Debug/net5.0/publish",
+            "detail": "install dependencies from package"
         }
     ]
 }

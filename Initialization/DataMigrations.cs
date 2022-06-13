@@ -204,13 +204,13 @@ namespace Indotalent
             bool isFirebird = serverType.StartsWith("Firebird", StringComparison.OrdinalIgnoreCase);
 
             // safety check to ensure that we are not modifying an arbitrary database.
-            
-            if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
-                    @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
-            {
-                SkippedMigrations = true;
-                return;
-            }
+            // Untuk menggunakan penamaan database default silahkan uncomment script dibawah ini:
+            /* if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
+            //         @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
+            // {
+            //     SkippedMigrations = true;
+            //     return;
+            }*/
 
             string databaseType = isOracle ? "OracleManaged" : serverType;
 
