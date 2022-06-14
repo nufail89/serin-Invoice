@@ -66,6 +66,7 @@ namespace Indotalent
             services.Configure<UploadSettings>(Configuration.GetSection(UploadSettings.SectionKey));
 
             services.Configure<Serenity.Extensions.EnvironmentSettings>(Configuration.GetSection(Serenity.Extensions.EnvironmentSettings.SectionKey));
+            services.Configure<Serenity.Extensions.SmtpSettings>(Configuration.GetSection(Serenity.Extensions.SmtpSettings.SectionKey));
 
             
             var dataProtectionKeysFolder = Configuration?["DataProtectionKeysFolder"];

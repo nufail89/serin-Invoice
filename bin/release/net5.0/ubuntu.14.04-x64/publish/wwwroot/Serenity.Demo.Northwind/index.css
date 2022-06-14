@@ -1,0 +1,93 @@
+.s-Demo-Northwind-ProductDialog > .size {
+    width: 650px;
+}
+
+.s-Demo-Northwind-ProductDialog .caption {
+    width: 180px;
+}
+
+.s-Demo-Northwind-CustomerDialog .s-NotesEditor {
+    flex: 1 1 auto;
+}
+
+.s-Demo-Northwind-OrderDialog .caption,
+.s-Demo-Northwind-CustomerOrderDialog .caption {
+    width: 130px;
+}
+
+.s-Demo-Northwind-OrderDetailDialog .caption {
+    width: 80px;
+}
+
+.s-Demo-Northwind-OrderGrid .s-CustomerEditor {
+    min-width: 250px;
+    width: 250px;
+}
+
+.s-Demo-Northwind-ProductGrid .slick-cell input[type=text] {
+  text-align: right;
+  width: 100%;
+}
+
+.s-Demo-Northwind-ProductGrid .slick-cell .dirty {
+  background-color: var(--s-input-dirty-bg, #ffe0e0);
+}
+
+.s-NotesEditor {
+  border: 1px solid var(--s-input-border, #ccc);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.s-NotesEditor ul {
+  padding: 0;
+  min-height: 110px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.s-NotesEditor li {
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid var(--s-table-border, #C3C2C2);
+  background-color: var(--s-table-bg, #F5E7DC);
+  padding: 8px;
+  position: relative;
+}
+
+.s-NotesEditor .note-text {
+  padding-right: 24px;
+  display: block;
+}
+
+.s-NotesEditor .note-delete {
+  background-image: url('../Content/serenity/images/delete2.png');
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 6px;
+  top: 6px;
+  opacity: 0.4;
+}
+
+.s-NotesEditor .note-delete:hover {
+  opacity: 1;
+}
+
+.s-NotesEditor .note-date {
+  margin-top: 6px;
+  display: block;
+  text-align: right;
+  color: var(--s-link-color, #2a4084);
+  text-decoration: none;
+  font-style: italic;
+}
+
+.s-NoteDialog > .size {
+  width: 465px;
+}
+
+.s-NoteDialog .ui-dialog-content {
+  padding-bottom: 10px;
+}
