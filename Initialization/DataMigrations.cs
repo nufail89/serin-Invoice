@@ -264,7 +264,8 @@ namespace Indotalent
 
                 using var scope = serviceProvider.CreateScope();
                 var runner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
-                runner.MigrateUp();
+                //Uncomment ini untuk menjalankan migrasi
+                //runner.MigrateUp();
             }
             catch (Exception ex)
             {

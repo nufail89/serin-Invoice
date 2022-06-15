@@ -1,3 +1,14 @@
+.chart {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.chart svg,
+.chart canvas {
+  width: 100% !important;
+}
+
+
 .s-Administration-LanguageDialog > .size {
   width: 450px;
 }

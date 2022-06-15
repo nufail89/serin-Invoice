@@ -2323,6 +2323,15 @@ declare namespace Indotalent.Sales {
     }
 }
 declare namespace Indotalent.Sales {
+    interface InvoicePaymentCurrencyRequest extends Serenity.ServiceRequest {
+    }
+}
+declare namespace Indotalent.Sales {
+    interface InvoicePaymentCurrencyResponse extends Serenity.ServiceResponse {
+        Currency?: string;
+    }
+}
+declare namespace Indotalent.Sales {
     interface InvoicePaymentForm {
         Number: Serenity.StringEditor;
         Description: Serenity.TextAreaEditor;

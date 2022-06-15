@@ -177,6 +177,7 @@ namespace MVC
             public static class Invoice
             {
                 public const string InvoiceIndex = "~/Modules/Sales/Invoice/InvoiceIndex.cshtml";
+                public const string InvoicePrint = "~/Modules/Sales/Invoice/InvoicePrint.cshtml";
             }
 
             public static class InvoiceDetail

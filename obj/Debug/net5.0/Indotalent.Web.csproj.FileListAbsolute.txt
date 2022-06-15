@@ -1995,3 +1995,4 @@ C:/Users/Server/Documents/GitHub/serin-Invoice/obj/Debug/net5.0/Indotalent.Web.g
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Membership/Account/ResetPassword/AccountResetPassword.AdminLTE.cshtml.g.cs
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Views/Shared/_LayoutSlim.cshtml.g.cs
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Views/Shared/_LayoutSlimHead.cshtml.g.cs
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/Debug/net5.0/Razor/Modules/Sales/Invoice/InvoicePrint.cshtml.g.cs
