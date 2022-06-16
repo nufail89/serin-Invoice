@@ -801,3 +801,4 @@
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/release/net5.0/ubuntu.20.04-x64/ref/Indotalent.Web.dll
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/release/net5.0/ubuntu.20.04-x64/Indotalent.Web.pdb
 /home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/release/net5.0/ubuntu.20.04-x64/Indotalent.Web.genruntimeconfig.cache
+/home/nufail/Projects/Kel3/Kel3/Indotalent.Web/obj/release/net5.0/ubuntu.20.04-x64/Razor/Modules/Sales/Invoice/InvoicePrint.cshtml.g.cs

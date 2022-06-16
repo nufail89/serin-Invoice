@@ -14,11 +14,6 @@
     <h1>@Localizer.Get("Navigation.Dashboard")</h1>
 }
 
-<div class="row text-center">
-    <h2>Invoice App. management</h2>
-    <h4>Developed by. Kelompok 3</h4>
-    @* <marquee behavior="scroll" direction="left"><h4>Aplikasi Berbasis SaaS Dari Serenity</h2></marquee> *@
-</div>
 <style>
 .s-dashboard-card, .s-dashboard-card-sm {
     margin-bottom: var(--bs-gutter-x);
@@ -91,9 +86,33 @@
     right: 10px;
     font-size: 64px;
 }
+.small-box-footer {
+  position: relative;
+  text-align: center;
+  padding: 3px 0;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+.small-box-footer:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.15);
+}
 
 .bg-world-map {
     background: #3c8dbc;
+}
+
+.bg-G-purple {
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+
+}
+.bg-G-orange {
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387);
+
 }
 
 .s-dashboard-card-sm:hover .icon {
@@ -101,113 +120,201 @@
 }
 </style>
 
-@* Membuat Card Body Di Dashboard Halaman Awal *@
+
 <div class="row">
     <div class="col-lg-4 col-sm-6">
-        <div class="card s-dashboard-card-sm bg-primary bg-opacity-50">
+        <div class="card s-dashboard-card-sm bg-primary text-white">
             <div class="card-body">
-                <h3>@Model.CurrentMonthSales.Amount.ToString("##,##.00  ")   </h3>
-                <p>Sales Orders (@Model.Currency)</p>
+                <h3>@Model.CurrentMonthSales.Amount.ToString("##,##,00")</h3>
+                <p>Sales Order (@Model.Currency)</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-shopping-bag"></i>
+            </div>
+            <a href="~/Sales/SalesOrder" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+        <div class="card s-dashboard-card-sm s-alt bg-info text-white">
+            <div class="card-body">
+                <h3>@Model.CurrentMonthPurchase.Amount.ToString("##,##,00")</h3>
+                <p>Purchase Order (@Model.Currency)</p>
             </div>
             <div class="icon">
                 <i class="fa fa-shopping-cart"></i>
             </div>
+            <a href="~/Purchase/PurchaseOrder" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <div class="col-lg-4 col-sm-6">
-        <div class="card s-dashboard-card-sm s-alt bg-info bg-opacity-50">
+        <div class="card s-dashboard-card-sm bg-warning text-white">
             <div class="card-body">
-                <h3>@Model.CurrentMonthPurchase.Amount.ToString("##,##.00  ")    </h3>
-                <p>Purchase Orders (@Model.Currency)</p>
-            </div>
-            <div class="icon">
-                <i class="fa fa-truck"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-sm-6">
-        <div class="card s-dashboard-card-sm bg-warning bg-opacity-50">
-            <div class="card-body">
-                <h3>@Model.CurrentMonthMargin.Amount.ToString("##,##.00  ")   </h3>
+                <h3>@Model.CurrentMonthMargin.Amount.ToString("##,##,00")</h3>
                 <p>Margin (@Model.Currency)</p>
             </div>
             <div class="icon">
-                <i class="fa fa-user-plus"></i>
+                <i class="fa fa-percent"></i>
             </div>
+            <a href="#" class="small-box-footer">#</a>
         </div>
     </div>
-@* ----------Batas Akhir Card Body 3 Kotak ------- *@
-
-
-@* < ---- Membuat Grafik Tipe Persen / PIE -------- > *@
-<div class="row">
-    <section class="col-lg-6">
-        <div class="card s-dashboard-card">
-            <div class="card-body p-0" align="center">
-                <h3 class="card-title" align="center"><strong>Sales Transaction</strong></h3>
-                <br>
-                    <div class="col-sm-6">
-                        <div class="inner">
-                            <input type="text" class="knob" data-readonly="true" value="@Model.CurrentMonthSalesTransaction" data-width="200" data-height="200" data-fgColor="#23b7e5">
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a class="nav-link" href="~/Sales/SalesOrder" class="col-4 text-center">Sales Transaction <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-   <section class="col-lg-6">
-        <div class="card s-dashboard-card">
-            <div class="card-body p-0" align="center">
-                <h3 class="card-title" align="center"> <strong>Purchase Transaction</strong></h3>
-                <br>
-                    <div class="col-sm-6">
-                        <div class="inner">
-                            <input type="text" class="knob" data-readonly="true" value="@Model.CurrentMonthPurchaseTransaction" data-width="200" data-height="200" data-fgColor="#23b7e5">
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a class="nav-link" href="~/Purchase/PurchaseOrder" class="col-4 text-center">Purchase Transaction <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-            </div>
-        </div>
-    </section>  
 </div>
 
-
-
-@* <------ Batas Akhir Grafik Tipe Persen ------------ > *@
-
-@* Membuat Grafik *@
 <div class="row">
-    <section class="col-lg-12">
-        <div class="card s-dashboard-card">
-            <div class="card-body">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="header"><h3 class="card-title">Sales & Purchase Graph (@Model.Currency)</h3></li> 
-                </ul>
-                <div class="tab-content no-padding">
-                    <div class="tab-pane fade show active" id="orders-by-quarter-pane">
-                        <canvas id="orders-by-quarter-chart" style="height: 280px;" ></canvas>
+	<div class="col-lg-6">
+		<div class="small-box text-center .bg-G-white">
+			<div class="inner">
+				<input type="text" class="knob" data-readonly="true" value="@Model.CurrentMonthSalesTransaction" data-width="200" data-height="200" data-fgColor="#ffffff" data-linecap="round" data-bgColor="rgba(66, 20, 62, 0.46)">
+			</div>
+			<div class="icon">
+				<i class="ion ion-person-add"></i>
+			</div>
+			<a href="~/Sales/SalesOrder" class="small-box-footer">Sales Transaction <i class="fa fa-arrow-circle-right"></i></a>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="small-box text-center .bg-G-white">
+			<div class="inner">
+				<input type="text" class="knob" data-readonly="true" value="@Model.CurrentMonthPurchaseTransaction" data-width="200" data-height="200" data-fgColor="#ffffff" data-linecap="round" data-bgColor="rgba(66, 20, 62, 0.46)">
+			</div>
+			<div class="icon">
+				<i class="ion ion-person-add"></i>
+			</div>
+			<a href="~/Purchase/PurchaseOrder" class="small-box-footer">Purchase Transaction <i class="fa fa-arrow-circle-right"></i></a>
+		</div>
+	</div>
+</div>
+<div class="row">
+    <section class="col-lg-6">
+        <div class="card s-dashboard-card bg-success">
+            <div class="card-header d-flex">
+                <h3 class="card-title text-white">Sales Graph (@Model.Currency)</h3>
+            </div>
+            <div class="card-body text-white">
+                @* <canvas id="purchase-chart" style="height: 266px;"></canvas> *@
+                <div class="chart" id="purchase-chartzzzzzzz" style="height: 250px;"></div>
+            </div>
+            <div class="card-footer bg-light no-border">
+                <div class="row">
+                    <div class="col-4 text-center" style="border-right: 1px solid #f4f4f4">
+                        <input type="text" class="knob" data-readonly="true" value="@Model.PurchaseKPI1.Value" data-width="60" data-height="60" data-fgColor="#39a0ff" data-bgColor="#39a0ff50">
+                        <div class="knob-label">@Model.PurchaseKPI1.Name</div>
                     </div>
-                    <div class="tab-pane fade" id="orders-by-type-pane">
-                        <canvas id="orders-by-type-chart" style="height: 280px; width: 300px; margin: 0 auto;"></canvas>
+                    <div class="col-4 text-center" style="border-right: 1px solid #f4f4f4">
+                        <input type="text" class="knob" data-readonly="true" value="@Model.PurchaseKPI2.Value" data-width="60" data-height="60" data-fgColor="#39a0ff" data-bgColor="#39a0ff50">
+                        <div class="knob-label">@Model.PurchaseKPI2.Name</div>
+                    </div>
+                    <div class="col-4 text-center">
+                        <input type="text" class="knob" data-readonly="true" value="@Model.PurchaseKPI3.Value" data-width="60" data-height="60" data-fgColor="#39a0ff" data-bgColor="#39a0ff50">
+                        <div class="knob-label">@Model.PurchaseKPI3.Name</div>
                     </div>
                 </div>
             </div>
-                
         </div>
     </section>
-</div>  
+    <section class="col-lg-6">
+        <div class="card s-dashboard-card bg-primary">
+            <div class="card-header d-flex">
+                <h3 class="card-title text-white">Purchase Graph (@Model.Currency)</h3>
+            </div>
+            <div class="card-body text-white">
+                @* <canvas id="sales-chart" style="height: 266px;"></canvas> *@
+                <div class="chart" id="sales-chart" style="height: 250px;"></div>
+            </div>
+            <div class="card-footer bg-light no-border">
+                <div class="row">
+                    <div class="col-4 text-center" style="border-right: 1px solid #f4f4f4">
+                        <input type="text" class="knob" data-readonly="true" value="@Model.SalesKPI1.Value" data-width="60" data-height="60" data-fgColor="#39a0ff" data-bgColor="#39a0ff50">
+                        <div class="knob-label">@Model.SalesKPI1.Name</div>
+                    </div>
+                    <div class="col-4 text-center" style="border-right: 1px solid #f4f4f4">
+                        <input type="text" class="knob" data-readonly="true" value="@Model.SalesKPI2.Value" data-width="60" data-height="60" data-fgColor="#39a0ff" data-bgColor="#39a0ff50">
+                        <div class="knob-label">@Model.SalesKPI2.Name</div>
+                    </div>
+                    <div class="col-4 text-center">
+                        <input type="text" class="knob" data-readonly="true" value="@Model.SalesKPI3.Value" data-width="60" data-height="60" data-fgColor="#39a0ff" data-bgColor="#39a0ff50">
+                        <div class="knob-label">@Model.SalesKPI3.Name</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-@* ------ Batas Akhir Membuat Grafik   ------ *@
+    @* <section class="col-lg-5">
+        <div class="card s-dashboard-card bg-world-map">
+            <div class="card-header d-flex">
+                <h3 class="card-title text-white">
+                    <i class="fa fa-map-marker"></i> Visitors
+                </h3>
+                <div class="ms-auto s-dashboard-card-tools">
+                    <button class="btn btn-primary btn-sm daterange" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="world-map" style="height: 253px; width: 100%;"></div>
+            </div>
+            <div class="card-footer border-top-0">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <div id="sparkline-1"></div>
+                        <div class="knob-label text-white text-opacity-75">New Visitors</div>
+                    </div>
+                    <div class="col-4 text-center">
+                        <div id="sparkline-2"></div>
+                        <div class="knob-label text-white text-opacity-75">Online</div>
+                    </div>
+                    <div class="col-4 text-center">
+                        <div id="sparkline-3"></div>
+                        <div class="knob-label text-white text-opacity-75">Returning</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="card s-dashboard-card">
+            <div class="card-body p-0">
+                <div id="calendar" style="width: 100%"></div>
+            </div>
+            <div class="card-footer py-4">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="clearfix">
+                            <span class="pull-left">Task #1</span>
+                            <small class="float-end">90%</small>
+                        </div>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
+                        </div>
+                        <div class="clearfix">
+                            <span class="pull-left">Task #2</span>
+                            <small class="float-end">70%</small>
+                        </div>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="clearfix">
+                            <span class="pull-left">Task #3</span>
+                            <small class="float-end">60%</small>
+                        </div>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
+                        </div>
+                        <div class="clearfix">
+                            <span class="pull-left">Task #4</span>
+                            <small class="float-end">40%</small>
+                        </div>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> *@
+</div>
 
-@* ------- Penggunaan function -------------- *@
 <script>
 
     $(function () {
@@ -230,181 +337,44 @@
 
         $(".knob").knob();
 
-        var visitorsData = {
-            "US": 398, //USA
-            "SA": 400, //Saudi Arabia
-            "CA": 1000, //Canada
-            "DE": 500, //Germany
-            "FR": 760, //France
-            "CN": 300, //China
-            "AU": 700, //Australia
-            "BR": 600, //Brazil
-            "IN": 800, //India
-            "GB": 320, //Great Britain
-            "RU": 3000 //Russia
-        };
+        var purchaseChart = new Morris.Line({
+		element: 'purchase-chartzzzzzzz',
+		resize: true,
+		data: @(Html.Raw(Json.Serialize(Model.PurchaseGraph))),
+		xkey: 'Month',
+		ykeys: ['Amount'],
+		labels: ['Amount (@Model.Currency)'],
+		lineColors: ['#efefef'],
+		lineWidth: 2,
+		hideHover: 'auto',
+		gridTextColor: "#fff",
+		gridStrokeWidth: 0.4,
+		pointSize: 4,
+		pointStrokeColors: ["#efefef"],
+		gridLineColor: "#efefef",
+		gridTextFamily: "Open Sans",
+		gridTextSize: 10
+	  });
 
-        $('#world-map').vectorMap({
-            map: 'world_mill_en',
-            backgroundColor: "transparent",
-            regionStyle: {
-                initial: {
-                    fill: 'rgba(64, 80, 96, 0.5)',
-                    "fill-opacity": 1,
-                    stroke: 'none',
-                    "stroke-width": 0,
-                    "stroke-opacity": 1
-                }
-            },
-            series: {
-                regions: [{
-                    values: visitorsData,
-                    scale: ["#72b1dc", "#f3f7ff"],
-                    normalizeFunction: 'polynomial'
-                }]
-            },
-            onRegionLabelShow: function (e, el, code) {
-                if (typeof visitorsData[code] != "undefined")
-                    el.html(el.html() + ': ' + visitorsData[code] + ' new visitors');
-            }
-        });
 
-        $("#calendar").datepicker();
-
-        const scaleGrid = {
-            color: 'rgba(140, 142, 150, 0.15)',
-            borderDash: [8, 4]
-        }
-
-        var salesByQuarterChart = new Chart(document.getElementById('orders-by-quarter-chart'), {
-            type: 'line',
-            data: {
-                labels: ['@Model.SalesKPI1.Value'],
-                datasets: [
-                    {
-                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                        borderColor: 'rgb(255, 255, 255, 0.7)',
-                        borderWidth: 4,
-                        radius: 0,
-                        hitRadius: 6,
-                        label: 'Sales Graph',
-                        fill: true,
-                        data: [ "@Model.SalesKPI1.Value" ]
-                    },
-                    {
-                        label: 'Purchase Graph',
-                        backgroundColor: 'rgba(54, 162, 235, 0.4)',
-                        borderColor: 'rgba(54, 162, 235, 0.2)',
-                        borderWidth: 4,
-                        radius: 0,
-                        hitRadius: 6,
-                        fill: true,
-                        data: ['@Model.SalesKPI2.Value']
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: {
-                        ticks: {
-                            color: 'rgb(140, 142, 150)'
-                        },
-                        grid: {
-                            display: false,
-                        }
-                    },
-                    y: {
-                        ticks: {
-                            color: 'rgb(140, 142, 150)'
-                        },
-                        grid: scaleGrid
-                    }
-                }
-            }
-        });
-      
-        var salesByTypeChart = new Chart(document.getElementById('orders-by-type-chart'), {
-            type: 'doughnut',
-            data: {
-                labels: ["Download Sales", "In-Store Sales", "Mail-Order Sales"],
-                datasets: [{
-                    label: 'Sales by Type',
-                    data: [20, 50, 30],
-                    backgroundColor:  [
-                        '#4dc9f6',
-                        '#f67019',
-                        '#f53794'
-                    ]
-                }]
-            },
-            options: {
-                responsive: false,
-                maintainAspectRatio: false
-            }
-        });
-
-        var trafficChart = new Chart(document.getElementById('traffic-chart'), {
-            type: 'bar',
-            data: {
-                labels: Array(37).fill().map(function(x, n) { var d = new Date(); d.setDate(d.getDate() - n); return Q.formatDate(d, 'MMM dd'); }).reverse(),
-                datasets: [
-                    {
-                        label: 'Search',
-                        backgroundColor: "#206bc4", 
-                        barPercentage: 0.7,
-                        data: [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 2, 12, 5, 8, 22, 6, 8, 6, 4, 1, 8, 24, 29, 51, 40, 47, 23, 26, 50, 26, 41, 22, 46, 47, 81, 46, 6]
-                    },
-                    {
-                        label: 'Social',
-                        backgroundColor: "#79a6dc",
-                        barPercentage: 0.7,
-                        data: [2, 5, 4, 3, 3, 1, 4, 7, 5, 1, 2, 5, 3, 2, 6, 7, 7, 1, 5, 5, 2, 12, 4, 6, 18, 3, 5, 2, 13, 15, 20, 47, 18, 15, 11, 10, 0]
-                    },
-                    {
-                        label: 'Other',
-                        backgroundColor: "#bfe399",
-                        barPercentage: 0.7,
-                        data: [2, 9, 1, 7, 8, 3, 6, 5, 5, 4, 6, 4, 1, 9, 3, 6, 7, 5, 2, 8, 4, 9, 1, 2, 6, 7, 5, 1, 8, 3, 2, 3, 4, 9, 7, 1, 6]
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    x: {
-                        stacked: true,
-                        ticks: {
-                            callback: function(val, index) {
-                                return index % 4 === 0 ? this.getLabelForValue(val) : '';
-                            },
-                            color: 'rgb(140, 142, 150)'
-                        },
-                        grid: {
-                            color: 'rgba(140, 142, 150, 0.15)',
-                            borderDash: [8, 4]
-                        }
-                    },
-                    y: {
-                        stacked: true,
-                        ticks: {
-                            color: 'rgb(140, 142, 150)'
-                        },
-                        grid: {
-                            color: 'rgba(140, 142, 150, 0.15)',
-                            borderDash: [8, 4]
-                        }
-                    }
-                }
-            }
-        });
+	  var salesChart = new Morris.Line({
+		element: 'sales-chart',
+		resize: true,
+		data: @(Html.Raw(Json.Serialize(Model.SalesGraph))),
+		xkey: 'Month',
+		ykeys: ['Amount'],
+		labels: ['Amount (@Model.Currency)'],
+		lineColors: ['#efefef'],
+		lineWidth: 2,
+		hideHover: 'auto',
+		gridTextColor: "#fff",
+		gridStrokeWidth: 0.4,
+		pointSize: 4,
+		pointStrokeColors: ["#efefef"],
+		gridLineColor: "#efefef",
+		gridTextFamily: "Open Sans",
+		gridTextSize: 10
+	  });
             
 
         var sparklineOpt = {
